@@ -20,7 +20,7 @@ RUN apt-get update -y && \
 COPY ./requirements.txt /app/requirements.txt
 
 # Install Python dependencies
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r /app/requirements.txt
 
 # Copy the rest of your application's code to the container
 COPY . /app
