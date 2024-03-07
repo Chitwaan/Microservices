@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: FitTrackPro Event Receiver API
+  description: This API handles fitness and wellness event data from user devices for the FitTrackPro application.
+  contact:
+    email: support@fittrackpro.com
+  version: 1.0.0
+servers:
+- url: /
+tags:
+- name: workout-events
+  description: Operations available to handle workout event data
+- name: health-events
+  description: Operations available to handle health event data
+
+paths:
+  /workoutEvents:
+    get:
+      tags:
+      - workout-events
+      summary: Gets a workout event object by index
+      description: "Endpoint to receive workout data like exercise type, duration, and intensity."
+      operationId: app.get_workout_event_by_index
+      parameters:
+        - name: index
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned a workout event object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkoutEvents'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /healthMetrics:
+    get:
+      tags:
+        - health-events
+      summary: Gets a health metrics object by index
+      description: Endpoint to receive health metrics like heart rate and calories burned.
+      operationId: app.get_health_metrics_by_index
+      parameters:
+        - name: index
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned a health metrics object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthMetrics'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    WorkoutEvents:
+      type: object
+      required:
+        - userDeviceId
+        - exerciseType
+        - duration
+        - intensity
+      properties:
+        userDeviceId:
+          type: string
+          description: The device ID of the user
+        exerciseType:
+          type: string
+          description: The type of exercise
+        duration:
+          type: integer
+          description: Duration of the workout in minutes
+        intensity:
+          type: string
+          description: Intensity of the workout
+        trace_id:
+          type: string
+          description: Unique identifier for tracing the event
+    HealthMetrics:
+      type: object
+      required:
+        - userDeviceId
+        - heartRate
+        - caloriesBurned
+      properties:
+        userDeviceId:
+          type: string
+          description: The device ID of the user
+        heartRate:
+          type: integer
+          description: Heart rate in beats per minute
+        caloriesBurned:
+          type: integer
+          description: Amount of calories burned
+        trace_id:
+          type: string
+          description: Unique identifier for tracing the event

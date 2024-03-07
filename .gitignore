@@ -1,0 +1,12 @@
+.ven
+/Storage/events.db
+/Storage/events.json
+/Storage/storage_app.log
+
+
+/Receiver/app.log
+
+/Processing/lab5_app.log
+/Processing/stats.sqlite
+
+/Audit/app.log

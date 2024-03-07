@@ -1,0 +1,134 @@
+openapi: 3.0.0
+info:
+  title: FitTrackPro Event Receiver API
+  description: This API handles fitness and wellness event data from user devices for the FitTrackPro application.
+  contact:
+    email: support@fittrackpro.com
+  version: 1.0.0
+servers:
+  - url: /
+tags:
+  - name: workout-events
+    description: Operations available to handle workout event data
+  - name: health-events
+    description: Operations available to handle health event data
+  - name: events-by-time-range
+    description: Operations to retrieve events within a time range
+paths:
+  /workoutEvents:
+  
+    get:
+      tags:
+        - events-by-time-range
+      summary: Get workout events within a time range
+      description: Retrieve workout events within the specified time range.
+      operationId: app.getWorkoutEventsByTimeRange
+      parameters:
+        - name: start_timestamp
+          in: query
+          description: Start timestamp for filtering workout events
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: end_timestamp
+          in: query
+          description: End timestamp for filtering workout events
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkoutData'
+        "400":
+          description: Invalid request
+  /healthMetrics:
+   
+    get:
+      tags:
+        - events-by-time-range
+      summary: Get health metrics within a time range
+      description: Retrieve health metrics within the specified time range.
+      operationId: app.getHealthMetricsByTimeRange
+      parameters:
+        - name: start_timestamp
+          in: query
+          description: Start timestamp for filtering health metrics
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: end_timestamp
+          in: query
+          description: End timestamp for filtering health metrics
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthMetrics'
+        "400":
+          description: Invalid request
+ 
+components:
+  schemas:
+    WorkoutData:
+      required:
+        - duration
+        - exerciseType
+        - intensity
+        - userDeviceId
+      type: object
+      properties:
+        userDeviceId:
+          type: string
+          description: Universally Unique Identifier for the user's device
+          format: uuid
+        exerciseType:
+          type: string
+          description: Type of workout exercise
+          example: Running
+        duration:
+          type: integer
+          description: Duration of the workout in minutes
+          format: int64
+          example: 30
+        intensity:
+          type: string
+          description: Intensity level of the workout
+          example: High
+    HealthMetrics:
+      required:
+        - caloriesBurned
+        - heartRate
+        - userDeviceId
+      type: object
+      properties:
+        userDeviceId:
+          type: string
+          description: Universally Unique Identifier for the user's device
+          format: uuid
+        heartRate:
+          type: integer
+          description: Heart rate in beats per minute
+          format: int64
+          example: 75
+        caloriesBurned:
+          type: integer
+          description: Amount of calories burned during the workout
+          format: int64
+          example: 200

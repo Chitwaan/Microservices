@@ -1,0 +1,21 @@
+version: 1
+database:
+  host: microservices-3855.eastus.cloudapp.azure.com
+  port: 3306
+  user: user
+  password: Password
+  dbname: events
+
+events:
+  hostname: microservices-3855.eastus.cloudapp.azure.com
+  port: 9092
+  topic: events 
+
+logging:
+  level: INFO
+  file: audit_service.log
+
+eventstore1:
+  url: http://localhost:8090/workoutEvents
+eventstore2:
+  url: http://localhost:8090/healthMetrics

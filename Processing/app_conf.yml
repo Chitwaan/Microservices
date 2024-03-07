@@ -1,0 +1,10 @@
+version: 1
+datastore:
+  filename: stats.sqlite
+scheduler:
+  period_sec: 5
+eventstore1:
+  url: http://localhost:8090/workoutEvents
+eventstore2:
+  url: http://localhost:8090/healthMetrics
+

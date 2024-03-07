@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: FitTrackPro Event Receiver API
+  description: This API handles fitness and wellness event data from user devices for the FitTrackPro application.
+  contact:
+    email: support@fittrackpro.com
+  version: 1.0.0
+servers:
+  - url: /
+tags:
+  - name: workout-events
+    description: Operations available to handle workout event data
+  - name: health-events
+    description: Operations available to handle health event data
+  - name: events-by-time-range
+    description: Operations to retrieve events within a time range
+  - name: stats
+    description: Operations to retrieve event statistics
+paths:
+  /stats:
+    get:
+      tags:
+        - stats
+      summary: Get event statistics
+      description: Retrieve statistics on events processed by the service.
+      operationId: app.get_stats
+      responses:
+        "200":
+          description: Successfully returned the statistics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventStatistics'
+        "400":
+          description: Invalid request
+components:
+  schemas:
+    WorkoutData:
+      required:
+        - duration
+        - exerciseType
+        - intensity
+        - userDeviceId
+      type: object
+      properties:
+        userDeviceId:
+          type: string
+          description: Universally Unique Identifier for the user's device
+          format: uuid
+        exerciseType:
+          type: string
+          description: Type of workout exercise
+          example: Running
+        duration:
+          type: integer
+          description: Duration of the workout in minutes
+          format: int64
+          example: 30
+        intensity:
+          type: string
+          description: Intensity level of the workout
+          example: High
+    HealthMetrics:
+      required:
+        - caloriesBurned
+        - heartRate
+        - userDeviceId
+      type: object
+      properties:
+        userDeviceId:
+          type: string
+          description: Universally Unique Identifier for the user's device
+          format: uuid
+        heartRate:
+          type: integer
+          description: Heart rate in beats per minute
+          format: int64
+          example: 75
+        caloriesBurned:
+          type: integer
+          description: Amount of calories burned during the workout
+          format: int64
+          example: 200
+    EventStatistics:
+      type: object
+      required:
+        - num_workout_events
+        - total_duration
+        # - avg_intensity
+        - num_health_metrics
+        - max_heart_rate
+        - total_calories_burned
+      properties:
+        num_workout_events:
+          type: integer
+          description: The total number of workout events recorded.
+          example: 300
+        total_duration:
+          type: integer
+          description: The total duration of all workout events in minutes.
+          example: 15000
+        avg_intensity:
+          type: string
+          description: The average intensity of all workout events.
+          example: "Medium"
+        num_health_metrics:
+          type: integer
+          description: The total number of health metrics recorded.
+          example: 500
+        max_heart_rate:
+          type: integer
+          description: The maximum heart rate recorded in any health metric.
+          example: 190
+        total_calories_burned:
+          type: integer
+          description: The total number of calories burned as recorded across all health metrics.
+          example: 50000

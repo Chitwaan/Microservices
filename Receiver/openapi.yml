@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  title: FitTrackPro Event Receiver API
+  description: This API handles fitness and wellness event data from user devices for the FitTrackPro application.
+  contact:
+    email: support@fittrackpro.com
+  version: 1.0.0
+servers:
+- url: /
+tags:
+- name: workout-events
+  description: Operations available to handle workout event data
+- name: health-events
+  description: Operations available to handle health event data
+paths:
+  /workoutEvents:
+    post:
+      tags:
+      - workout-events
+      summary: Receives workout data
+      description: "Endpoint to receive workout data like exercise type, duration, and intensity."
+      operationId: app.postWorkoutData
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkoutData'
+        required: true
+      responses:
+        "201":
+          description: Workout data successfully received
+        "400":
+          description: "Invalid input, object invalid"
+  /healthMetrics:
+    post:
+      tags:
+      - health-events
+      summary: Receives health metrics data
+      description: Endpoint to receive health metrics like heart rate and calories burned.
+      operationId: app.postHealthMetrics
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HealthMetrics'
+        required: true
+      responses:
+        "201":
+          description: Health metrics successfully received
+        "400":
+          description: "Invalid input, object invalid"
+components:
+  schemas:
+    WorkoutData:
+      required:
+      - duration
+      - exerciseType
+      - intensity
+      - userDeviceId
+      type: object
+      properties:
+        trace_id:
+          type: string
+          description: Universally Unique Identifier for the user's device
+          format: uuid
+        exerciseType:
+          type: string
+          description: Type of workout exercise
+          example: Running
+        duration:
+          type: integer
+          description: Duration of the workout in minutes
+          format: int64
+          example: 30
+        intensity:
+          type: string
+          description: Intensity level of the workout
+          example: High
+    HealthMetrics:
+      required:
+      - caloriesBurned
+      - heartRate
+      - userDeviceId
+      type: object
+      properties:
+        trace_id:
+          type: string
+          description: Universally Unique Identifier for the user's device
+          format: uuid
+        heartRate:
+          type: integer
+          description: Heart rate in beats per minute
+          format: int64
+          example: 75
+        caloriesBurned:
+          type: integer
+          description: Amount of calories burned during the workout
+          format: int64
+          example: 200
