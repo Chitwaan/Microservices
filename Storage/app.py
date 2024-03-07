@@ -29,7 +29,7 @@ logging.config.dictConfig(log_config)
 
 logger = logging.getLogger('storageLogger')
 
-with open('../Receiver/app_conf.yml', 'r') as f:
+with open('app_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 
 db_config = app_config['database']  
