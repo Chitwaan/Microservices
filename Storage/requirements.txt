@@ -1,5 +1,5 @@
 flask
-connexion
+connexion[flask,uvicorn]
 swagger-ui-bundle
 SQLAlchemy
 mysql-connector-python

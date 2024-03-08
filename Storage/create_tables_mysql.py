@@ -5,7 +5,7 @@ import mysql.connector
 # Configuration details from docker-compose.yml
 config = {
     'user': 'user',
-    'password': '',  # Ensure you use the correct password as defined in your docker-compose file
+    'password': 'Password',  # Ensure you use the correct password as defined in your docker-compose file
     'host': 'microservices-3855.eastus.cloudapp.azure.com',  # Use the DNS Name of your VM
     'database': 'events',  # The database name from your docker-compose file
     'raise_on_warnings': True,
