@@ -13,7 +13,7 @@ RUN apt-get update -y && \
     apt-get clean
 
 # Set the working directory inside the container
-# WORKDIR /app
+ WORKDIR /app
 
 # Copy only the requirements.txt file to leverage Docker cache
 # Note: You will have different requirements.txt for each service, make sure to adjust the source path as needed
