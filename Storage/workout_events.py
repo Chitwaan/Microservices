@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql.functions import now
 from base import Base
 import datetime
+from datetime import datetime
 
 class WorkoutEvent(Base):
     """ Workout Event """
@@ -13,7 +14,7 @@ class WorkoutEvent(Base):
     exercise_type = Column(String(250), nullable=False)
     duration = Column(Integer, nullable=False)
     intensity = Column(String(250), nullable=False)
-    date_created = Column(DateTime, nullable=False, default=now)
+    date_created = Column(DateTime, nullable=False, default=datetime.now)
     trace_id = Column(String, nullable=True)
 
     def __init__(self, user_device_id, exercise_type, duration, intensity, trace_id=None):

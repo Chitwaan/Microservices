@@ -43,12 +43,12 @@ def populate_stats():
             total_calories_burned=0,
             num_workout_events=0,
             total_duration=0,
-            last_updated=datetime.datetime.now()
+            last_updated=datetime.datetime.utcnow()
         )
         session.add(unified_stats)
 
     try:
-        current_datetime = datetime.datetime.now()
+        current_datetime = datetime.datetime.utcnow()
         last_updated_time = unified_stats.last_updated if unified_stats.last_updated else current_datetime
         last_updated_str = last_updated_time.strftime("%Y-%m-%dT%H:%M:%SZ")
         current_datetime_str = current_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")

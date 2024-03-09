@@ -15,7 +15,7 @@ class UnifiedStats(Base):
     total_calories_burned = Column(Integer, default=0)
     num_workout_events = Column(Integer, default=0)
     total_duration = Column(Integer, default=0)
-    last_updated = Column(DateTime, default=datetime.datetime.now())
+    last_updated = Column(DateTime, default=datetime.datetime.utcnow())
     
     def to_dict(self):
         return {
