@@ -53,9 +53,10 @@ def populate_stats():
         last_updated_str = last_updated_time.strftime("%Y-%m-%dT%H:%M:%SZ")
         current_datetime_str = current_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
 
+        
         # Update your endpoints to use the correct start and end timestamps
-        health_metrics_endpoint = f"http://localhost:8090/healthMetrics?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
-        workout_events_endpoint = f"http://localhost:8090/workoutEvents?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
+        health_metrics_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/healthMetrics?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
+        workout_events_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/workoutEvents?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
 
         # Fetch new health metrics and workout events since the last update
         # current_datetime = datetime.datetime.now()
