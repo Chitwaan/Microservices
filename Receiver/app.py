@@ -27,7 +27,7 @@ def postWorkoutData(body):
     trace_id = str(uuid.uuid4())
     msg = {
         "type": 'workout event',
-        "datetime": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
         "payload": body,
         "trace_id": trace_id
     }
@@ -40,7 +40,7 @@ def postHealthMetrics(body):
     trace_id = str(uuid.uuid4())
     msg = {
         "type": 'health metrics',
-        "datetime": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
         "payload": body,
         "trace_id": trace_id
     }
