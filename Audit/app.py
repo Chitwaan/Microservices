@@ -60,5 +60,5 @@ app.add_api('openapi.yml',  strict_validation=True, validate_responses=True)
 if __name__ == '__main__':
     port = 8110
     logger.info(f"Starting server on port {port}")
-    app.run(port=port)
+    app.run( host='0.0.0.0', port=port)
     logger.info(f"Server is running on port {port}")
