@@ -39,33 +39,33 @@ services:
     volumes:
       - my-db:/var/lib/mysql
 
-  # receiver:
-  #   build: ../Receiver
-  #   ports:
-  #     - "8080:8080"
-  #   depends_on:
-  #     - kafka
+  receiver:
+    build: ../Receiver
+    ports:
+      - "8080:8080"
+    depends_on:
+      - kafka
 
-  # storage:
-  #   build: ../Storage
-  #   ports:
-  #     - "8090:8090"
-  #   depends_on:
-  #     - kafka
-  #     - db
+  storage:
+    build: ../Storage
+    ports:
+      - "8090:8090"
+    depends_on:
+      - kafka
+      - db
 
-  # processing:
-  #   build: ../Processing
-  #   network_mode: "host"
-  #   depends_on:
-  #     - storage
+  processing:
+    build: ../Processing
+    network_mode: "host"
+    depends_on:
+      - storage
 
-  # audit_log:
-  #   build: ../Audit
-  #   ports:
-  #     - "8110:8110"
-  #   depends_on:
-  #     - kafka
+  audit_log:
+    build: ../Audit
+    ports:
+      - "8110:8110"
+    depends_on:
+      - kafka
 
 volumes:
   my-db:
