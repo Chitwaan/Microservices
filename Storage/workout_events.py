@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql.functions import now
 from base import Base
-import datetime
+#import datetime
 from datetime import datetime
 
 class WorkoutEvent(Base):
@@ -23,7 +23,7 @@ class WorkoutEvent(Base):
         self.exercise_type = exercise_type
         self.duration = duration
         self.intensity = intensity
-        self.date_created = datetime.datetime.now() 
+#        self.date_created = datetime.datetime.now() 
         self.trace_id = trace_id
 
     def to_dict(self):
