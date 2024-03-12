@@ -40,14 +40,14 @@ services:
       - my-db:/var/lib/mysql
 
   receiver:
-    build: ./Receiver
+    build: ../Receiver
     ports:
       - "8080:8080"
     depends_on:
       - kafka
 
   storage:
-    build: ./Storage
+    build: ../Storage
     ports:
       - "8090:8090"
     depends_on:
@@ -55,13 +55,13 @@ services:
       - db
 
   processing:
-    build: ./Processing
+    build: ../Processing
     network_mode: "host"
     depends_on:
       - storage
 
   audit_log:
-    build: ./Audit
+    build: ../Audit
     ports:
       - "8110:8110"
     depends_on:
