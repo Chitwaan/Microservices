@@ -19,7 +19,13 @@ logger = logging.getLogger('basicLogger')
 
 # Kafka configuration
 kafka_config = app_config['events']
-kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
+try:
+    kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
+    # Additional Kafka client setup code here
+    logger.info(f"Connected to Kafka on {kafka_config['hostname']}:{kafka_config['port']}")
+except Exception as e:
+    logger.error(f"Failed to connect to Kafka on {kafka_config['hostname']}:{kafka_config['port']} - Error: {e}", exc_info=True)
+# kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
 kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
 kafka_producer = kafka_topic.get_sync_producer()
 
