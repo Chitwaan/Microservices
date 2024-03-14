@@ -43,11 +43,12 @@ def get_event_by_index(index, event_type):
         return {"message": "Not Found"}, 404
 
     except Exception as e:
-	logger.error(f"Error retrieving {event_type} event at index {index}: {str(e)}")
-	logger.debug(f"Exception details: {e}", exc_info=True)
-	logger.debug(f"Requested index: {index}, Event Type: {event_type}")
-	logger.debug(f"Kafka connection details: Host - {app_config['events']['hostname']}, Port - {app_config['events']['port']}")
-	return {"message": "Internal Server Error"}, 500
+        logger.error(f"Error retrieving {event_type} event at index {index}: {str(e)}")
+        # New logging statements to debug
+        logger.debug(f"Exception details: {e}", exc_info=True)
+        logger.debug(f"Requested index: {index}, Event Type: {event_type}")
+        logger.debug(f"Kafka connection details: Host - {app_config['events']['hostname']}, Port - {app_config['events']['port']}")
+        return {"message": "Internal Server Error"}, 500
 
 def get_workout_event_by_index(index):
     """Retrieve a workout event by index"""
