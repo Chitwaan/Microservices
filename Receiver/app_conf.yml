@@ -8,7 +8,7 @@ database:
   
 events:
   hostname: microservices-3855.eastus.cloudapp.azure.com
-  port: 9092
+  port: 29092
   topic: events
 
 
