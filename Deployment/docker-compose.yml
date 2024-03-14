@@ -26,6 +26,7 @@ services:
     depends_on:
       - zookeeper
 
+
   db:
     image: mysql:5.7
     restart: always
@@ -66,6 +67,8 @@ services:
       - "8110:8110"
     depends_on:
       - kafka
+
+
 
 volumes:
   my-db:
