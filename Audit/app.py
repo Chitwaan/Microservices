@@ -42,12 +42,15 @@ def get_event_by_index(index, event_type):
         logger.error(f"Could not find {event_type} event at index {index}")
         return {"message": "Not Found"}, 404
 
+    except RuntimeError as e:
+        if str(e) == 'generator raised StopIteration':
+            logger.info(f"No more messages found in topic for {event_type} at index {index}")
+            return {"message": "Not Found"}, 404
+        else:
+            logger.error(f"Unexpected RuntimeError retrieving {event_type} event at index {index}: {str(e)}", exc_info=True)
+            return {"message": "Internal Server Error"}, 500
     except Exception as e:
-        logger.error(f"Error retrieving {event_type} event at index {index}: {str(e)}")
-        # New logging statements to debug
-        logger.debug(f"Exception details: {e}", exc_info=True)
-        logger.debug(f"Requested index: {index}, Event Type: {event_type}")
-        logger.debug(f"Kafka connection details: Host - {app_config['events']['hostname']}, Port - {app_config['events']['port']}")
+        logger.error(f"Error retrieving {event_type} event at index {index}: {str(e)}", exc_info=True)
         return {"message": "Internal Server Error"}, 500
 
 def get_workout_event_by_index(index):
