@@ -19,6 +19,9 @@ from sqlalchemy import and_
 from threading import Thread
 from pykafka import KafkaClient
 from pykafka.common import OffsetType
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
+from connexion import FlaskApp
 
 
 
@@ -184,37 +187,16 @@ def getHealthMetricsByTimeRange(start_timestamp, end_timestamp):
 
     return health_metrics_data, 200
 
-# def getHealthMetricsByTimeRange(start_timestamp, end_timestamp):
-#         session = DB_SESSION()
-#         start_datetime = datetime.datetime.strptime(start_timestamp, "%Y-%m-%dT%H:%M:%S")
-#         end_datetime = datetime.datetime.strptime(end_timestamp, "%Y-%m-%dT%H:%M:%S")
-
-
-#         logger.info(f"Received request for getHealthMetricsByTimeRange with start_timestamp={start_timestamp} and end_timestamp={end_timestamp}")
-  
-#         logger.info(f"$$Querying health metrics with start_datetime={start_datetime} and end_datetime={end_datetime}")
-
-    
-#         try:
-#             logger.info(f"##Querying health metrics with start_datetime={start_datetime} and end_datetime={end_datetime}")
-#             health_metrics = session.query(HealthMetric).filter(
-#                 and_(HealthMetric.date_created >= start_datetime, HealthMetric.date_created <= end_datetime)
-#             ).all()
-
-#             health_metrics_data = [metric.to_dict() for metric in health_metrics]
-#             logger.info(f"Found {len(health_metrics_data)} health metrics")
-
-#             return health_metrics_data, 200
-#         except Exception as e:
-#             logger.error(f"Error retrieving health metrics: {str(e)}")
-#             return {"message": "Error retrieving health metrics"}, 500
-#         finally:
-#             session.close()
-
-
-
 
 app = connexion.FlaskApp(__name__, specification_dir='')
+app.add_middleware(
+    CORSMiddleware,
+    position=MiddlewarePosition.BEFORE_EXCEPTION,
+    allow_origins=["*"],  # For development, you can allow all origins. Adjust for production!
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
