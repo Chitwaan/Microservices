@@ -19,7 +19,6 @@ logger = logging.getLogger('basicLogger')
 
 # Kafka configuration
 kafka_config = app_config['events']
-logger.info(f"Kafka server: {kafka_config['hostname']}:{kafka_config['port']}")
 kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
 kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
 kafka_producer = kafka_topic.get_sync_producer()
