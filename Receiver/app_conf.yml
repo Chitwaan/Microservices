@@ -7,7 +7,7 @@ database:
   dbname: events
   
 events:
-  hostname: microservices-3855.eastus.cloudapp.azure.com
+  hostname: kafka
   port: 29092
   topic: events
 
