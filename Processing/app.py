@@ -12,6 +12,9 @@ import requests
 from sqlalchemy import desc
 from stats import UnifiedStats
 import uuid
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
+from connexion import FlaskApp
 
 # Load configuration
 
@@ -140,8 +143,15 @@ def init_scheduler():
     sched.start()
 
 
-
 app = connexion.FlaskApp(__name__, specification_dir='')
+app.add_middleware(
+    CORSMiddleware,
+    position=MiddlewarePosition.BEFORE_EXCEPTION,
+    allow_origins=["*"],  # For development, you can allow all origins. Adjust for production!
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
