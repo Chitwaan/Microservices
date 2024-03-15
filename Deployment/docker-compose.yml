@@ -59,12 +59,12 @@ services:
       - db
 
   processing:
-  build:
-    context: ../Processing
-  network_mode: "host"
-  depends_on:
-    - kafka
-    - storage
+    build:
+      context: ../Processing
+    network_mode: "host"
+    depends_on:
+      - kafka
+      - storage
 
   audit_log:
     build:
