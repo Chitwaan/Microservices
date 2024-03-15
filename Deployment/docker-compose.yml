@@ -72,8 +72,6 @@ services:
     ports:
       - "8110:8110"
     depends_on:
-      - kafka
-
-
+      - kafka	
 volumes:
   my-db:
