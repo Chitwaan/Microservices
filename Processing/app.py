@@ -110,10 +110,6 @@ def populate_stats():
     logger.info("Periodic Processing Ended")
 
 
-
-
-
-
 def get_stats():
     logger.info("GET stats request has started")
     session = DBSession()
