@@ -41,8 +41,7 @@ services:
       - my-db:/var/lib/mysql
 
   receiver:
-    build:
-      context: ../Receiver
+    image: deployment-receiver:latest
     ports:
       - "8080:8080"
     depends_on:
@@ -50,8 +49,7 @@ services:
       - db
 
   storage:
-    build:
-      context: ../Storage
+    image: deployment-storage:latest
     ports:
       - "8090:8090"
     depends_on:
@@ -59,16 +57,14 @@ services:
       - db
 
   processing:
-    build:
-      context: ../Processing
+    image: deployment-processing:latest
     network_mode: "host"
     depends_on:
       - kafka
       - storage
 
   audit_log:
-    build:
-      context: ../Audit
+    image: deployment-audit_log:latest
     ports:
       - "8110:8110"
     depends_on:
