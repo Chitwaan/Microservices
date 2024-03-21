@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql.functions import now
 from base import Base
-#import datetime
+# import datetime
 from datetime import datetime
 
 class HealthMetric(Base):
@@ -21,7 +21,7 @@ class HealthMetric(Base):
         self.user_device_id = user_device_id
         self.heart_rate = heart_rate
         self.calories_burned = calories_burned
-        #self.date_created = datetime.datetime.utcnow()  
+  #      self.date_created = datetime.datetime.utcnow()  
         self.trace_id = trace_id    
 
 

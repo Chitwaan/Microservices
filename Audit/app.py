@@ -41,10 +41,10 @@ def get_event_by_index(index, event_type):
                         logger.info(f"Found and returning {event_type} event at filtered index {filtered_index}")
                         return msg_dict['payload'], 200  
                     filtered_index += 1
-                
+
         logger.error(f"Could not find {event_type} event at index {index}")
         return {"message": "Not Found"}, 404
-        
+
     except RuntimeError as e:
         if str(e) == 'generator raised StopIteration':
             logger.info(f"No more messages found in topic for {event_type} at index {index}")
@@ -55,7 +55,7 @@ def get_event_by_index(index, event_type):
     except Exception as e:
         logger.error(f"Error retrieving {event_type} event at index {index}: {str(e)}", exc_info=True)
         return {"message": "Internal Server Error"}, 500
-    
+
 def get_workout_event_by_index(index):
     """Retrieve a workout event by index"""
     return get_event_by_index(index, 'workout event')

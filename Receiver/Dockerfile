@@ -12,9 +12,8 @@ RUN apt-get update -y && \
     apt-get install -y python3 python3-pip && \
     apt-get clean
 
-# Set the working directory inside the container
+# Set the working directory inside the containe
 WORKDIR /app
-
 # Copy only the requirements.txt file to leverage Docker cache
 # Note: You will have different requirements.txt for each service, make sure to adjust the source path as needed
 COPY ./requirements.txt /app/requirements.txt

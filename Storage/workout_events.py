@@ -23,7 +23,7 @@ class WorkoutEvent(Base):
         self.exercise_type = exercise_type
         self.duration = duration
         self.intensity = intensity
-        #self.date_created = datetime.datetime.now() 
+#        self.date_created = datetime.datetime.now()
         self.trace_id = trace_id
 
     def to_dict(self):

@@ -19,7 +19,7 @@ from sqlalchemy import and_
 from threading import Thread
 from pykafka import KafkaClient
 from pykafka.common import OffsetType
-
+import time
 
 
 with open('storage_log_conf.yml', 'r') as f:
@@ -98,13 +98,37 @@ def postHealthMetrics(body):
 
 def process_messages():
     """ Process event messages from Kafka """
+    # hostname = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
+    # client = KafkaClient(hosts=hostname)
+    # topic = client.topics[str.encode(app_config['events']['topic'])]
+    # consumer = topic.get_simple_consumer(consumer_group=b'event_group',
+    #                                      reset_offset_on_start=False,
+    #                                      auto_offset_reset=OffsetType.LATEST)
+    max_retries = app_config['kafka']['max_retries']
+    retry_wait = app_config['kafka']['retry_wait']  # In seconds
     hostname = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
-    client = KafkaClient(hosts=hostname)
-    topic = client.topics[str.encode(app_config['events']['topic'])]
-    consumer = topic.get_simple_consumer(consumer_group=b'event_group',
-                                         reset_offset_on_start=False,
-                                         auto_offset_reset=OffsetType.LATEST)
+    retry_count = 0
     
+    while retry_count < max_retries:
+        try:
+            client = KafkaClient(hosts=hostname)
+            topic = client.topics[str.encode(app_config['events']['topic'])]
+            consumer = topic.get_simple_consumer(consumer_group=b'event_group',
+                                                 reset_offset_on_start=False,
+                                                 auto_offset_reset=OffsetType.LATEST)
+            
+            logger.info("Successfully connected to Kafka")
+            break  
+
+        except Exception as e:
+            logger.error(f"Connection to Kafka failed on retry {retry_count}: {e}")
+            time.sleep(retry_wait)  
+            retry_count += 1  
+
+    if retry_count == max_retries:
+        logger.error("Maximum retries reached. Failed to connect to Kafka.")
+        return
+   
     for msg in consumer:
         if msg is not None:
             try:
@@ -122,11 +146,12 @@ def process_messages():
                 elif msg_dict["type"] == "health metrics":
                     postHealthMetrics(payload)
                 
-                consumer.commit_offsets()
+                consumer.commit_offsets()  # Commit only if processing is successful
             except Exception as e:
                 logger.error(f"Error processing message: {e}")
 
-        
+
+
 def getWorkoutEventsByTimeRange(start_timestamp, end_timestamp):
     session = DB_SESSION()
     logger.info(f"*****Received request for workout with start_timestamp")
