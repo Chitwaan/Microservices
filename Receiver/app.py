@@ -6,6 +6,25 @@ import uuid
 from pykafka import KafkaClient
 import json
 from datetime import datetime
+import time
+
+
+def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait=3):
+    """Initialize Kafka producer with retry logic."""
+    retry_count = 0
+    while retry_count < max_retries:
+        try:
+            logger.info('Attempting to connect to Kafka...')
+            kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
+            kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
+            kafka_producer = kafka_topic.get_sync_producer()
+            logger.info('Successfully connected to Kafka')
+            return kafka_producer
+        except Exception as e:
+            logger.error(f"Failed to connect to Kafka on retry {retry_count}: {e}")
+            time.sleep(retry_wait)
+            retry_count += 1
+    raise Exception("Failed to initialize Kafka producer after max retries")
 
 # Load configuration files
 with open('log_conf.yml', 'r') as f:
@@ -17,13 +36,15 @@ with open('app_conf.yml', 'r') as f:
 
 logger = logging.getLogger('basicLogger')
 
+kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
+
 # Kafka configuration
-kafka_config = app_config['events']
-logger.info('kafka starting')
-kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
-logger.info('kafka done')
-kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
-kafka_producer = kafka_topic.get_sync_producer()
+# kafka_config = app_config['events']
+# logger.info('kafka starting')
+# kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
+# logger.info('kafka done')
+# kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
+# kafka_producer = kafka_topic.get_sync_producer()
 
 def postWorkoutData(body):
     trace_id = str(uuid.uuid4())
