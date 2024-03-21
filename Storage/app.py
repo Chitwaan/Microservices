@@ -36,7 +36,7 @@ db_config = app_config['database']
 engine_url = f"mysql+pymysql://{db_config['user']}:{db_config['password']}@{db_config['host']}:{db_config['port']}/{db_config['dbname']}"
 
 
-DB_ENGINE = create_engine(engine_url)
+DB_ENGINE = create_engine(engine_url, pool_size=20, pool_recycle=300, pool_pre_ping=True)
 DB_SESSION = sessionmaker(bind=DB_ENGINE)
 logging.info("Connecting to MySQL database at hostname: %s, port: %s", "microservices-3855.eastus.cloudapp.azure.com", 3306)
 
