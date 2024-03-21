@@ -54,7 +54,7 @@ services:
       - db
 
   storage:
-    image: deployment-storage:latest
+    image: storage:latest
     ports:
       - "8090:8090"
     depends_on:
