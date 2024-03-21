@@ -49,8 +49,25 @@ def postHealthMetrics(body):
     logger.info(f"Produced health metrics message with trace id: {trace_id}")
     return NoContent, 201
 
+
+def send_startup_message():
+    """Send a message indicating the receiver service is ready."""
+    message = {
+        "type": "service status",
+        "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+        "service": "Receiver",
+        "status": "ready",
+        "code": "0001",
+        "description": "Receiver service has started and is ready to receive messages."
+    }
+    msg_str = json.dumps(message)
+    kafka_producer.produce(msg_str.encode('utf-8'))
+    logger.info("Sent service ready message to Kafka.")
+
+
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
+    # send_startup_message() 
     app.run(host='0.0.0.0', port=8080)

@@ -184,11 +184,32 @@ def getHealthMetricsByTimeRange(start_timestamp, end_timestamp):
 
     return health_metrics_data, 200
 
+def get_kafka_producer():
+    """Returns a Kafka producer instance for sending messages."""
+    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+    topic = client.topics[str.encode(app_config['events']['topic'])]  # Use the event_log topic here
+    return topic.get_sync_producer()
+
+
+def send_storage_ready_message():
+    """Sends a readiness message to the event_log topic indicating Storage is ready to consume messages."""
+    message = {
+        "type": "Storage Service Status",
+        "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+        "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.",
+        "code": "0002"
+    }
+    kafka_producer = get_kafka_producer()
+    msg_str = json.dumps(message)
+    kafka_producer.produce(msg_str.encode('utf-8'))
+    logger.info("Storage service readiness message sent to Kafka.")
+
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
+    # send_storage_ready_message() 
     t1 = Thread(target=process_messages)
     t1.daemon =True
     t1.start()
