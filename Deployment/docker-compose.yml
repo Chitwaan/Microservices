@@ -52,6 +52,7 @@ services:
       - TARGET_ENV=test
     volumes:
       - /home/chitwan/config/receiver:/config
+      - /home/chitwan/logs:/logs
     depends_on:
       - kafka
       - db
@@ -64,6 +65,7 @@ services:
       - TARGET_ENV=test
     volumes:
       - /home/chitwan/config/storage:/config
+      - /home/chitwan/logs:/logs
     depends_on:
       - kafka
       - db
@@ -75,6 +77,7 @@ services:
       - TARGET_ENV=test
     volumes:
       - /home/chitwan/config/processing:/config
+      - /home/chitwan/logs:/logs
     depends_on:
       - kafka
       - storage
@@ -87,6 +90,7 @@ services:
       - TARGET_ENV=test
     volumes:
       - /home/chitwan/config/audit_log:/config
+      - /home/chitwan/logs:/logs
     depends_on:
       - kafka
 
