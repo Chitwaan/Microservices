@@ -15,17 +15,25 @@ import uuid
 from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 from connexion import FlaskApp
+import os
+
+if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
+    print("In Test Environment")
+    app_conf_file = "/config/app_conf.yml"
+    log_conf_file = "/config/log_conf.yml"
+else:
+    print("In Dev Environment")
+    app_conf_file = "app_conf.yml"
+    log_conf_file = "log_conf.yml"
 
 # Load configuration
-
-
-with open('log_conf.yml', 'r') as f:
+with open(log_conf_file, 'r') as f:
     log_config = yaml.safe_load(f)
 
 logging.config.dictConfig(log_config)
 logger = logging.getLogger('basicLogger')
 
-with open('app_conf.yml', 'r') as f:
+with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
 # Create SQLAlchemy engine and session
 engine = create_engine(f"sqlite:///{app_config['datastore']['filename']}")
@@ -61,16 +69,7 @@ def populate_stats():
         health_metrics_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/healthMetrics?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
         workout_events_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/workoutEvents?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
 
-        # Fetch new health metrics and workout events since the last update
-        # current_datetime = datetime.datetime.now()
-        # last_updated_str = current_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
-        # logger.info(f" {last_updated_str} {unified_stats.last_updated}")
-
-    
-
-        # health_metrics_endpoint = f"http://localhost:8090/healthMetrics?start_timestamp={current_datetime.strftime('%Y-%m-%dT%H:%M:%SZ')}&end_timestamp={current_datetime.strftime('%Y-%m-%dT%H:%M:%SZ')}"
-        # workout_events_endpoint = f"http://localhost:8090/workoutEvents?start_timestamp={current_datetime.strftime('%Y-%m-%dT%H:%M:%SZ')}&end_timestamp={current_datetime.strftime('%Y-%m-%dT%H:%M:%SZ')}"
-    
+   
 
         # Fetch new workout events
         workout_events_response = requests.get(workout_events_endpoint, params={'start_timestamp': last_updated_str})

@@ -20,16 +20,26 @@ from threading import Thread
 from pykafka import KafkaClient
 from pykafka.common import OffsetType
 import time
+import os
+
+if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
+    print("In Test Environment")
+    app_conf_file = "/config/app_conf.yml"
+    log_conf_file = "/config/storage_log_conf.yml"  # Adjusted to reflect the actual file name you're using
+else:
+    print("In Dev Environment")
+    app_conf_file = "app_conf.yml"
+    log_conf_file = "storage_log_conf.yml"
 
 
-with open('storage_log_conf.yml', 'r') as f:
+with open(log_conf_file , 'r') as f:
     log_config = yaml.safe_load(f)
 
 logging.config.dictConfig(log_config)
 
 logger = logging.getLogger('storageLogger')
 
-with open('app_conf.yml', 'r') as f:
+with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
 
 db_config = app_config['database']  

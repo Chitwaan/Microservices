@@ -7,8 +7,17 @@ from pykafka import KafkaClient
 import json
 from datetime import datetime
 import time
+import os
 
-
+if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
+    print("In Test Environment")
+    app_conf_file = "/config/app_conf.yml"
+    log_conf_file = "/config/log_conf.yml"
+else:
+    print("In Dev Environment")
+    app_conf_file = "app_conf.yml"
+    log_conf_file = "log_conf.yml"
+ 
 def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait=3):
     """Initialize Kafka producer with retry logic."""
     retry_count = 0
@@ -27,11 +36,11 @@ def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait
     raise Exception("Failed to initialize Kafka producer after max retries")
 
 # Load configuration files
-with open('log_conf.yml', 'r') as f:
+with open(log_conf_file, 'r') as f:
     log_config = yaml.safe_load(f)
 logging.config.dictConfig(log_config)
 
-with open('app_conf.yml', 'r') as f:
+with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f)
 
 logger = logging.getLogger('basicLogger')
