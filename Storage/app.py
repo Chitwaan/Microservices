@@ -41,6 +41,8 @@ logger = logging.getLogger('storageLogger')
 
 with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
+logger.info("App Conf File: %s" % app_conf_file)
+logger.info("Log Conf File: %s" % log_conf_file)
 
 db_config = app_config['database']  
 engine_url = f"mysql+pymysql://{db_config['user']}:{db_config['password']}@{db_config['host']}:{db_config['port']}/{db_config['dbname']}"
