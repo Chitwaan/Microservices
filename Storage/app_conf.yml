@@ -12,7 +12,7 @@ events:
   topic: events
 
 kafka:
-  max_retries: 5  # Adjust this value as needed
+  max_retries: 5 
   retry_wait: 3 
 
 logging:
