@@ -2,17 +2,15 @@
 /Storage/events.db
 /Storage/events.json
 /Storage/storage_app.log
-/Storage/__pycache__
+/Storage/__pycache__/
 
+/Receiver/app.log
+/Receiver/__pycache__/
+/Processing/lab5_app.log
+/Processing/stats.sqlite
+/Processing/__pycache__
+/Audit/app.log
+/Audit/__pycache__
 
-./Receiver/app.log
-./Receiver/__pycache__
-
-./Processing/lab5_app.log
-./Processing/stats.sqlite
-./Processing/__pycache__
-
-./Audit/app.log
-./Audit/__pycache__
-
-./Event_logger/__pycache__
+/Event_logger/models/__pycache__/
+/Event_logger/__pycache__/
