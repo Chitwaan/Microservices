@@ -1,0 +1,178 @@
+2024-03-02 15:37:01,053 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:37:01,164 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:37:50,012 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:37:50,148 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:43:01,418 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:43:01,547 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:43:47,513 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 15:43:49,183 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:43:49,207 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 15:43:49,310 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:43:57,265 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 15:44:00,612 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:44:00,629 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 15:44:00,731 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:48:39,611 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 15:48:41,539 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:48:41,539 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 15:48:41,634 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:49:23,880 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 15:58:52,672 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:58:52,697 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 15:58:52,789 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 15:58:57,231 - basicLogger - INFO - Retrieving event at index 0 from topic workoutEventTopic
+2024-03-02 16:00:08,429 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:00:10,013 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:00:57,056 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:00:57,069 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:00:57,173 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:01:06,594 - basicLogger - INFO - Retrieving event at index 0 from topic workoutEventTopic
+2024-03-02 16:03:13,193 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:03:14,856 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:03:14,869 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:03:14,959 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:03:20,868 - basicLogger - ERROR - Error retrieving event at index 0 from topic workoutEvens: 'workoutEvens'
+2024-03-02 16:03:35,914 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:03:37,470 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:03:37,483 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:03:37,624 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:03:41,121 - basicLogger - ERROR - Error retrieving event at index 0 from topic workoutEvents: 'workoutEvents'
+2024-03-02 16:05:11,650 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:05:13,323 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:05:13,334 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:05:13,433 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:05:16,737 - basicLogger - ERROR - Error retrieving event at index 0 from topic workoutEventTopic: 'workoutEventTopic'
+2024-03-02 16:05:31,233 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:05:34,406 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:05:34,422 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:05:34,519 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:05:37,689 - basicLogger - INFO - Retrieving event at index 0 from topic workoutEventsTopic
+2024-03-02 16:05:54,810 - basicLogger - INFO - Retrieving event at index 1 from topic workoutEventsTopic
+2024-03-02 16:09:36,415 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:09:41,172 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:09:41,197 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:09:41,284 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:09:45,346 - basicLogger - INFO - Retrieving event at index 1 from topic workoutEventsTopic
+2024-03-02 16:09:46,351 - basicLogger - ERROR - Could not find event at index 1 from topic workoutEventsTopic
+2024-03-02 16:11:08,210 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:11:38,591 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:11:38,599 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:11:38,692 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:12:44,828 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:12:46,308 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:12:46,328 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:12:46,468 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:13:29,839 - basicLogger - ERROR - Error retrieving event at index 1 from topic workoutEventsTopic: Unable to connect to a broker to fetch metadata. See logs.
+2024-03-02 16:15:15,276 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:15:15,285 - basicLogger - INFO - Starting server on port 8111
+2024-03-02 16:15:15,388 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:16:53,132 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:16:55,574 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:16:55,589 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:16:55,671 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:17:46,260 - basicLogger - INFO - Retrieving event at index 1 from topic workoutEventsTopic
+2024-03-02 16:17:47,261 - basicLogger - ERROR - Could not find event at index 1 from topic workoutEventsTopic
+2024-03-02 16:17:52,248 - basicLogger - INFO - Retrieving event at index 20 from topic workoutEventsTopic
+2024-03-02 16:17:53,261 - basicLogger - ERROR - Could not find event at index 20 from topic workoutEventsTopic
+2024-03-02 16:20:37,142 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:20:38,596 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:20:38,613 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:20:38,717 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:20:42,113 - basicLogger - ERROR - Error retrieving event at index 20 from topic workoutEvents: 'workoutEvents'
+2024-03-02 16:26:54,047 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:26:58,582 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:26:58,610 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:26:58,695 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:27:09,914 - basicLogger - INFO - Retrieving event at index 20 from topic workoutEventsTopic
+2024-03-02 16:27:10,933 - basicLogger - ERROR - Could not find event at index 20 from topic workoutEventsTopic
+2024-03-02 16:29:33,506 - basicLogger - INFO - Server is running on port 8110
+2024-03-02 16:29:38,914 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:29:38,963 - basicLogger - INFO - Starting server on port 8110
+2024-03-02 16:29:39,164 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-02 16:29:49,572 - basicLogger - INFO - Retrieving event at index 20 from topic workoutEventsTopic
+2024-03-02 16:29:50,582 - basicLogger - ERROR - Could not find event at index 20 from topic workoutEventsTopic
+2024-03-05 12:26:22,321 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:26:22,341 - basicLogger - INFO - Starting server on port 8110
+2024-03-05 12:26:22,704 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:28:08,225 - basicLogger - INFO - Server is running on port 8110
+2024-03-05 12:28:53,255 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:28:53,271 - basicLogger - INFO - Starting server on port 8110
+2024-03-05 12:28:53,369 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:33:59,373 - basicLogger - INFO - Server is running on port 8110
+2024-03-05 12:34:01,437 - basicLogger - INFO - Starting Audit service on port 8110
+2024-03-05 12:34:05,964 - basicLogger - INFO - Retrieving workout event event at index 20
+2024-03-05 12:34:57,193 - basicLogger - INFO - Retrieving workout event event at index 2
+2024-03-05 12:44:41,443 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:44:41,456 - basicLogger - INFO - Starting server on port 8110
+2024-03-05 12:44:41,542 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:47:36,491 - basicLogger - INFO - Retrieving 20 event at index workoutEventsTopic
+2024-03-05 12:47:37,806 - basicLogger - ERROR - Could not find 20 event at index workoutEventsTopic
+2024-03-05 12:47:44,991 - basicLogger - INFO - Retrieving 2 event at index workoutEventsTopic
+2024-03-05 12:47:46,303 - basicLogger - ERROR - Could not find 2 event at index workoutEventsTopic
+2024-03-05 12:48:01,855 - basicLogger - INFO - Retrieving 60 event at index workoutEventsTopic
+2024-03-05 12:48:03,208 - basicLogger - ERROR - Could not find 60 event at index workoutEventsTopic
+2024-03-05 12:53:11,605 - basicLogger - INFO - Server is running on port 8110
+2024-03-05 12:53:13,523 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:53:13,546 - basicLogger - INFO - Starting server on port 8110
+2024-03-05 12:53:13,642 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-05 12:53:15,849 - basicLogger - INFO - Retrieving workout event event at index 60
+2024-03-05 12:53:27,171 - basicLogger - INFO - Retrieving workout event event at index 6
+2024-03-05 12:53:51,996 - basicLogger - INFO - Retrieving health metrics event at index 6
+2024-03-05 12:54:07,426 - basicLogger - INFO - Retrieving workout event event at index 6
+2024-03-05 13:15:27,458 - basicLogger - INFO - Server is running on port 8110
+2024-03-07 10:17:24,349 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 10:17:24,372 - basicLogger - INFO - Starting server on port 8110
+2024-03-07 10:17:24,431 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 10:20:10,588 - basicLogger - ERROR - Error retrieving workout event event at index 6: Unable to connect to a broker to fetch metadata. See logs.
+2024-03-07 10:20:13,013 - basicLogger - INFO - Retrieving workout event event at index 6
+2024-03-07 10:24:10,415 - basicLogger - INFO - Retrieving workout event event at index 6
+2024-03-07 10:24:25,391 - basicLogger - INFO - Retrieving workout event event at index 2
+2024-03-07 10:35:07,754 - basicLogger - INFO - Server is running on port 8110
+2024-03-07 10:35:09,933 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 10:35:09,947 - basicLogger - INFO - Starting server on port 8110
+2024-03-07 10:35:10,018 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 10:35:12,970 - basicLogger - INFO - Attempting to retrieve health metrics event at index 6
+2024-03-07 10:35:13,191 - basicLogger - DEBUG - Processing health metrics event at filtered index 0
+2024-03-07 10:35:13,193 - basicLogger - DEBUG - Processing health metrics event at filtered index 1
+2024-03-07 10:35:13,194 - basicLogger - DEBUG - Processing health metrics event at filtered index 2
+2024-03-07 10:35:13,194 - basicLogger - DEBUG - Processing health metrics event at filtered index 3
+2024-03-07 10:35:13,195 - basicLogger - DEBUG - Processing health metrics event at filtered index 4
+2024-03-07 10:35:13,195 - basicLogger - DEBUG - Processing health metrics event at filtered index 5
+2024-03-07 10:35:13,196 - basicLogger - DEBUG - Processing health metrics event at filtered index 6
+2024-03-07 10:35:13,196 - basicLogger - INFO - Found and returning health metrics event at filtered index 6
+2024-03-07 10:35:54,803 - basicLogger - INFO - Server is running on port 8110
+2024-03-07 10:35:56,108 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 10:35:56,120 - basicLogger - INFO - Starting server on port 8110
+2024-03-07 10:35:56,178 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 10:36:05,403 - basicLogger - INFO - Attempting to retrieve health metrics event at index 6
+2024-03-07 10:36:05,619 - basicLogger - INFO - Found and returning health metrics event at filtered index 6
+2024-03-07 10:53:13,176 - basicLogger - INFO - Attempting to retrieve workout event event at index 1
+2024-03-07 10:53:13,396 - basicLogger - INFO - Found and returning workout event event at filtered index 1
+2024-03-07 10:55:41,828 - basicLogger - INFO - Attempting to retrieve workout event event at index 1
+2024-03-07 10:55:42,033 - basicLogger - INFO - Found and returning workout event event at filtered index 1
+2024-03-07 11:01:58,761 - basicLogger - INFO - Attempting to retrieve health metrics event at index 6
+2024-03-07 11:01:58,975 - basicLogger - INFO - Found and returning health metrics event at filtered index 6
+2024-03-07 11:02:36,950 - basicLogger - INFO - Attempting to retrieve health metrics event at index 694932
+2024-03-07 11:02:38,181 - basicLogger - ERROR - Could not find health metrics event at index 694932
+2024-03-07 11:02:42,733 - basicLogger - INFO - Attempting to retrieve health metrics event at index 6
+2024-03-07 11:02:42,980 - basicLogger - INFO - Found and returning health metrics event at filtered index 6
+2024-03-07 14:02:17,406 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 14:02:17,435 - basicLogger - INFO - Starting server on port 8110
+2024-03-07 14:02:17,704 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-07 14:07:57,674 - basicLogger - INFO - Attempting to retrieve health metrics event at index 6
+2024-03-07 14:07:58,002 - basicLogger - INFO - Found and returning health metrics event at filtered index 6
+2024-03-07 14:17:20,174 - basicLogger - INFO - Attempting to retrieve health metrics event at index 6
+2024-03-07 14:17:20,585 - basicLogger - INFO - Found and returning health metrics event at filtered index 6
+2024-03-07 14:17:30,342 - basicLogger - INFO - Attempting to retrieve health metrics event at index 100
+2024-03-07 14:17:30,688 - basicLogger - INFO - Found and returning health metrics event at filtered index 100
+2024-03-07 14:17:37,773 - basicLogger - INFO - Attempting to retrieve health metrics event at index 200
+2024-03-07 14:17:39,337 - basicLogger - ERROR - Could not find health metrics event at index 200
+2024-03-07 14:17:47,780 - basicLogger - INFO - Attempting to retrieve workout event event at index 100
+2024-03-07 14:17:48,400 - basicLogger - INFO - Found and returning workout event event at filtered index 100
+2024-03-07 14:17:55,567 - basicLogger - INFO - Attempting to retrieve workout event event at index 200
+2024-03-07 14:17:56,893 - basicLogger - ERROR - Could not find workout event event at index 200
+2024-03-07 14:18:46,892 - basicLogger - INFO - Server is running on port 8110
+2024-03-09 15:17:45,566 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-09 15:17:45,592 - basicLogger - INFO - Starting server on port 8110
+2024-03-09 15:17:45,715 - basicLogger - INFO - Kafka server: microservices-3855.eastus.cloudapp.azure.com:9092
+2024-03-09 16:18:56,644 - basicLogger - INFO - Server is running on port 8110

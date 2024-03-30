@@ -5,12 +5,14 @@
 /Storage/__pycache__
 
 
-/Receiver/app.log
-/Receiver/__pycache__
+./Receiver/app.log
+./Receiver/__pycache__
 
-/Processing/lab5_app.log
-/Processing/stats.sqlite
-/Processing/__pycache__
+./Processing/lab5_app.log
+./Processing/stats.sqlite
+./Processing/__pycache__
 
-/Audit/app.log
-/Audit/__pycache__
+./Audit/app.log
+./Audit/__pycache__
+
+./Event_logger/__pycache__

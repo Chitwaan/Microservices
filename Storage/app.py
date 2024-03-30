@@ -148,19 +148,24 @@ def process_messages():
                 msg_dict = json.loads(msg_str)
                 logger.info(f"Message: {msg_dict}")
                 
-                trace_id = msg_dict.get('trace_id', 'default_trace_id')
+                # Check if 'payload' exists before accessing it
+                if 'payload' in msg_dict:
+                    trace_id = msg_dict.get('trace_id', 'default_trace_id')
+                    payload = msg_dict["payload"]
+                    payload['trace_id'] = trace_id  
 
-                payload = msg_dict["payload"]
-                payload['trace_id'] = trace_id  
-
-                if msg_dict["type"] == "workout event":
-                    postWorkoutData(payload)
-                elif msg_dict["type"] == "health metrics":
-                    postHealthMetrics(payload)
-                
+                    if msg_dict["type"] == "workout event":
+                        postWorkoutData(payload)
+                    elif msg_dict["type"] == "health metrics":
+                        postHealthMetrics(payload)
+                else:
+                    # Handle messages without 'payload' differently here
+                    logger.info(f"No payload in message. Message type: {msg_dict.get('type')}")
+            
                 consumer.commit_offsets()  # Commit only if processing is successful
             except Exception as e:
                 logger.error(f"Error processing message: {e}")
+
 
 
 
