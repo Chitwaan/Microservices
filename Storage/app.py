@@ -222,7 +222,8 @@ def getHealthMetricsByTimeRange(start_timestamp, end_timestamp):
 def get_kafka_producer():
     """Returns a Kafka producer instance for sending messages."""
     client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config['events']['topic'])]  # Use the event_log topic here
+    topic = client.topics[str.encode(app_config['events']['topic'])] 
+    logger.info("storage - ******Kafka producer connected.")
     return topic.get_sync_producer()
 
 
