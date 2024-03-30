@@ -16,6 +16,8 @@ from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 from connexion import FlaskApp
 import os
+import sqlite3
+from initialize_db import initialize_database
 
 if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
     print("In Test Environment")
@@ -35,6 +37,10 @@ logger = logging.getLogger('basicLogger')
 
 with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
+
+# Initialize the database
+initialize_database(app_config)
+
 # Create SQLAlchemy engine and session
 engine = create_engine(f"sqlite:///{app_config['datastore']['filename']}")
 Base.metadata.bind = engine
@@ -140,7 +146,6 @@ def init_scheduler():
     sched = BackgroundScheduler(daemon=True)
     sched.add_job(populate_stats, 'interval', seconds=app_config['scheduler']['period_sec'])
     sched.start()
-
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_middleware(
