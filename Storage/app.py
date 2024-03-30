@@ -25,7 +25,7 @@ import os
 if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
     print("In Test Environment")
     app_conf_file = "/config/app_conf.yml"
-    log_conf_file = "/config/storage_log_conf.yml"  # Adjusted to reflect the actual file name you're using
+    log_conf_file = "/config/storage_log_conf.yml" 
 else:
     print("In Dev Environment")
     app_conf_file = "app_conf.yml"
@@ -125,6 +125,7 @@ def process_messages():
                                                  auto_offset_reset=OffsetType.LATEST)
             
             logger.info("Successfully connected to Kafka")
+            logger.info(topic, client)
             send_storage_ready_message(client, app_config['events']['topic'])            
             break  
 
@@ -231,6 +232,8 @@ def getHealthMetricsByTimeRange(start_timestamp, end_timestamp):
 def send_storage_ready_message(kafka_client, topic_name):
     """Sends a readiness message to the event_log topic indicating Storage is ready to consume messages."""
     try:
+        logger.info("****",kafka_client, topic_name)
+        
         # Assuming kafka_client is an instance of KafkaClient already connected to Kafka.
         topic = kafka_client.topics[str.encode(topic_name)]
         kafka_producer = topic.get_sync_producer()
