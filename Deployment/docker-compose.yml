@@ -78,6 +78,7 @@ services:
     volumes:
       - /home/chitwan/config/processing:/config
       - /home/chitwan/logs:/logs
+      - processing-db:/data
     depends_on:
       - kafka
       - storage
@@ -104,4 +105,6 @@ services:
 
 volumes:
   my-db:
+    driver: local
+  processing-db:
     driver: local
