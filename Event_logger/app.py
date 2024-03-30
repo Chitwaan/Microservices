@@ -21,7 +21,7 @@ import time
 from models.event_log import init_db, EventLog
 
 
-with open('storage_log_conf.yml', 'r') as f:
+with open('log_conf.yml', 'r') as f:
     log_config = yaml.safe_load(f)
 
 logging.config.dictConfig(log_config)
@@ -45,14 +45,17 @@ def consume_events():
     for message in consumer:
         if message is not None:
             msg_data = json.loads(message.value.decode('utf-8'))
-            logger.info(f"Consumed message: {msg_data}")
+            # Filtering based on 'code' value
+            if msg_data.get('code') in ['0001', '0002']:
+                logger.info(f"Consumed readiness message: {msg_data}")
 
-            event_log = EventLog(
-                message=msg_data['message'],
-                code=msg_data['code']
-            )
-            db_session.add(event_log)
-            db_session.commit()
+                # Process the message as before
+                event_log = EventLog(
+                    message=msg_data.get('description', 'No description'), 
+                    code=msg_data.get('code', 'No code')
+                )
+                db_session.add(event_log)
+                db_session.commit()
 
 
 

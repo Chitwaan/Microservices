@@ -16,4 +16,3 @@ paths:
                 type: object
                 additionalProperties:
                   type: integer
-s
