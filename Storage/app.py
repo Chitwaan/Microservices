@@ -125,7 +125,7 @@ def process_messages():
                                                  auto_offset_reset=OffsetType.LATEST)
             
             logger.info("Successfully connected to Kafka")
-            send_storage_ready_message(kafka_client, topic_name)
+            send_storage_ready_message(client, topic)
             break  
 
         except Exception as e:
