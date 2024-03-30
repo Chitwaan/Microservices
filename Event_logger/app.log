@@ -1,3 +1,501 @@
 2024-03-30 11:54:40,499 - basicLogger - INFO - ####Starting to consume events
 2024-03-30 11:55:12,145 - basicLogger - INFO - ####Starting to consume events
 2024-03-30 11:56:05,188 - basicLogger - INFO - ####Starting to consume events
+2024-03-30 12:02:01,337 - basicLogger - INFO - ####Starting to consume events
+2024-03-30 12:02:21,836 - basicLogger - INFO - ####Starting to consume events
+2024-03-30 12:04:39,960 - basicLogger - INFO - ####Starting to consume events
+2024-03-30 12:06:14,571 - basicLogger - INFO - ####Starting to consume events
+2024-03-30 12:06:14,802 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,802 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T02:33:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "81d33330-3a3a-4579-b9f1-6bc9313a7629"}
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:18:57", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "6fd6c270-6523-4c62-9a87-6c771b16325f"}
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c3736222-086b-4d6b-9a00-2aab4764f164"}
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "a0c4bfce-f0df-4167-8a71-f960c0de3937"}
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,804 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "82aa67cc-f952-4f3c-b72f-fd6825227432"}
+2024-03-30 12:06:14,808 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,809 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "f6cd3518-92cd-45d9-adc7-11fa60f701fd"}
+2024-03-30 12:06:14,813 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,814 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "9271bd76-25a1-47b2-978b-747b7a621289"}
+2024-03-30 12:06:14,814 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,814 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "f7688132-3bbd-4e0b-af2c-2be6e1c931dc"}
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "8983a1ec-3d1c-46a7-b507-4be21ce1d915"}
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "e57a6e86-ab32-4375-a2b2-32d2466e52ed"}
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "04814443-ccc8-4d37-8d41-424c1970f373"}
+2024-03-30 12:06:14,824 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "eb0d0d9d-5a56-463f-99d6-91a64af5a47a"}
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "bd009d22-5f8d-4c21-884a-01413100e47e"}
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "63378e6c-7616-4a92-b6e9-4ced7535a689"}
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "bb2861d1-3f14-4b7b-81ea-24d96d7a521a"}
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "d6b8c4e1-fe9a-48c2-b1ef-0afa7a89f514"}
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "368213c7-c186-460e-b576-77e9bde94e8e"}
+2024-03-30 12:06:14,838 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,843 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:28", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "a91ab6c4-b156-4a0a-acfc-f41deae75870"}
+2024-03-30 12:06:14,843 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,843 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "acd81abc-c1c2-4ae3-b3c8-204934122d93"}
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "1031b7f0-a1ee-4ea3-acd1-4ee4ba7fef63"}
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "3df7aee9-be3d-4d51-88e4-4c0181ba5e94"}
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "3b9a38d7-49a1-4465-8b73-570d830f8f91"}
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "cd33af2e-e2b0-49bb-ad2c-86aa43e6f4ed"}
+2024-03-30 12:06:14,844 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "d9cc5453-babf-4685-bf16-7186172dd67d"}
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "f0e5dd4b-9bb0-45be-ada3-9e3125495587"}
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "45a05d02-066b-462a-8ddd-bda2aa70f966"}
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "2791e692-c3e9-4739-b841-c83639e84092"}
+2024-03-30 12:06:14,849 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,853 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "fe1c91e3-8bcd-4191-a315-e27cf21e1f4d"}
+2024-03-30 12:06:14,854 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,854 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "5bc587ac-10a3-4d4b-a707-5a736c58cfeb"}
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "fd62db85-8d30-42a9-bbe1-9a5b81e3e19e"}
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "dd96455a-f305-40b5-aaa9-f338434900a5"}
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "04079c6b-9854-4c76-b0a8-32928848c4eb"}
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "f8b73e88-1832-40eb-a5f1-eb9a4e0e56ec"}
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "c90156c2-a824-44bb-ab22-7bf1664ae4b0"}
+2024-03-30 12:06:14,856 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,860 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c5a33c11-e304-47c7-9a9b-c2098fe416e0"}
+2024-03-30 12:06:14,860 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "02410716-f881-4c26-bbcd-cf79459b5a26"}
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "b7e739b0-ebef-4681-b425-9b07e4edbd67"}
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "43bad7f3-12ae-41e4-9b06-6746dae9a46f"}
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,861 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "6e602b71-2e6c-4dcd-b17a-bf05216a20d7"}
+2024-03-30 12:06:14,864 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "eb043aab-f63f-4445-9813-9a695809ed85"}
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "17bca1e5-4d5f-449f-9537-06e1fdcc8934"}
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "8c122385-5812-4bb1-a2f4-f85752ebc1bc"}
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,867 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "a42b06a4-a634-4498-91bf-65a13d76622f"}
+2024-03-30 12:06:14,870 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,870 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "8e16fb84-8a8d-4bd8-bb78-9e4af6149175"}
+2024-03-30 12:06:14,871 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,871 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "69ebfddb-1031-4347-bce0-c6269a172e90"}
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "845d1322-4d90-430c-b083-7dcf75416e1b"}
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "9fbf532b-7c88-42c6-826c-1632b7c9c6a0"}
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "dbbc374f-7011-4aa8-b9b5-59695d0dcb41"}
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:29", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "da6d4de2-fb22-48bb-a7ca-21d7ae1401b1"}
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "24be48d8-98a1-4f7d-9ef3-0be26dd0ee04"}
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,872 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "fb1b86d6-a6ba-41d1-84d8-af290c471291"}
+2024-03-30 12:06:14,877 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,877 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "a07468f7-f3b9-4d58-86d7-89a56f308c60"}
+2024-03-30 12:06:14,877 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,878 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "43efdd9f-0588-458b-979f-a21fe88344d6"}
+2024-03-30 12:06:14,878 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,878 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "1018c545-ee9e-4d59-b5c6-0b633cd9a67f"}
+2024-03-30 12:06:14,878 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,879 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c2cc6fee-70e3-4cdd-8f0b-835198674234"}
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "192898f8-b942-477e-b500-d806a3a4cc42"}
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "40ccbcca-20a8-4b08-b967-0e66abde2e38"}
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:19:30", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "a16d94f7-eeef-4531-880e-810ca2b2c88d"}
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,883 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:46", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "9eab8a3e-dacd-42ca-b7de-06ffb2c5af1a"}
+2024-03-30 12:06:14,886 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,887 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:46", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "69c1bab5-15ca-4536-9b81-c9e976327bfe"}
+2024-03-30 12:06:14,887 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,887 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:46", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "463e406d-b0a8-4308-bf0a-2d4d123f7135"}
+2024-03-30 12:06:14,887 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,887 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:46", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "44a7a996-2d93-4c78-83b2-8b51212e29c7"}
+2024-03-30 12:06:14,889 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,889 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:46", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "fd253376-fc00-4904-9492-590ac72cbb7b"}
+2024-03-30 12:06:14,889 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "66116e99-1d97-4111-b2b5-51fcdf637dcc"}
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "24534a43-f452-45fd-bcf0-a1899f3deed1"}
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "d18cab93-5e43-43a2-b792-408fa22e37de"}
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "09d50268-85cb-4fde-94f4-49433225db3e"}
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "6980f955-1685-491b-9eea-ad6bae753626"}
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "e23985ae-6cfb-4c21-816a-e84b63be95d1"}
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,890 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "cc82653d-b7bd-4c5e-ae59-d9c33e904890"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "59ff9a15-4efd-40ce-a474-c3aa13b0fe62"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "a3f4e52b-7d44-4d25-b894-3b4ec949bf89"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "7799d15f-dfb1-49c2-83b4-1a8b4cfa2b0c"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "f8c5baeb-6bcb-4efa-97f5-defd83f9d54a"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "1a30c02e-b2e2-441e-8c92-729832364715"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "6155a574-474a-43a7-9c07-f3af4accb114"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "810f8e06-77c6-4e50-aacb-3243c7b69c13"}
+2024-03-30 12:06:14,894 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,897 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c1f5c05a-5edf-4dc4-95f1-5a7a2a7020c4"}
+2024-03-30 12:06:14,897 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,897 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "d824b1af-cecd-499e-b4ea-33ba119576fa"}
+2024-03-30 12:06:14,897 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,897 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c3e44107-f370-4afb-acc4-cf7764d99cf0"}
+2024-03-30 12:06:14,897 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,904 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "7b65f5eb-ed2c-4943-b0d7-dbe7ea5ffa7e"}
+2024-03-30 12:06:14,904 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,904 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "11efd655-e282-4955-8d5a-ce940f70761c"}
+2024-03-30 12:06:14,904 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,904 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "af2e5610-d70c-4191-bcb2-fd38440fa58a"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "f030ac44-7ce4-4a3e-a702-84afe4bb91c0"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "7561fd5e-9dfa-428f-be6c-47da0736de04"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "9e6796f7-bfd4-4264-b6d4-7de24535059c"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "8cb19203-47e4-4c50-959d-223d195566f5"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "fc33830d-35dd-4d7d-9901-85af465e5d73"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c731da1c-b9ad-4bc7-b3b1-09c0a1bd02b9"}
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,906 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "324b9f6a-bd5d-4631-954b-05edfb64ee3d"}
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "8488fa7b-730a-49ab-8b20-7a39eb9561f1"}
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "5f26edc0-55f2-44bd-9427-7831f91c6bb6"}
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:47", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "99962a1e-b2f8-4086-a66d-e73209fd7428"}
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,911 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "bec2c71f-9dae-4c5c-9466-5102a4277587"}
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "bd3b58a6-ebee-45b2-92f3-45c1f76e9ee9"}
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "6644e2f2-72de-4e58-9f83-b46d54cf9c32"}
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "28f0591c-cec3-4b98-b40b-8fe00050eda6"}
+2024-03-30 12:06:14,914 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,920 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "242ff19e-ee1d-4d73-b066-3afba6b2d880"}
+2024-03-30 12:06:14,920 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,920 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "94afa532-bb82-47ba-8f0d-b3f4c7783358"}
+2024-03-30 12:06:14,920 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "12a9d0a2-e814-4309-bfce-f9c30a7a015b"}
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "bcf4e6e0-4ee0-4a82-8421-aabad9abf8ec"}
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "3c93ee88-c228-4318-8aba-092a46cc1710"}
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "bba2bbed-ced6-4266-ad60-ec15ff554ec4"}
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "7fb9ea61-d75f-499c-a075-cf3ae6e64c4a"}
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "2b45d856-13e5-4c55-9759-1173bb5f47f7"}
+2024-03-30 12:06:14,921 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,926 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "b434eae5-7955-4cd8-849a-da1c6708e6b9"}
+2024-03-30 12:06:14,926 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,927 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "e96c1da8-70cf-49f1-b841-818474d35fe1"}
+2024-03-30 12:06:14,927 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,927 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "33864560-d554-4f1e-80c9-6c5a9b936ef4"}
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "7e47bd23-8434-4f9e-a83d-7d56ad22ef34"}
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "4ff15240-7ce5-4844-a3cb-d73a714904eb"}
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "8774b353-ffb9-4197-945f-bdd9e6740591"}
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,928 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "436eec01-0917-4250-9090-dcb83728551d"}
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "98492798-7419-4902-b7f1-81f68ce5e753"}
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "e0ed78b8-0cde-45e4-ac49-30fd404e774a"}
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "7ad64df5-072d-4a13-a1e8-d5b9d9fb7211"}
+2024-03-30 12:06:14,930 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,935 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "ba8f2c6f-a5b5-4bb5-9024-2a647216b521"}
+2024-03-30 12:06:14,935 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,935 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:48", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "75303d48-8b21-42e6-88bf-7a12f145421a"}
+2024-03-30 12:06:14,936 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,936 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "c420b646-caf5-4497-b779-b60aa1e90b03"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "93806ac4-7147-457a-b295-4f5221351e22"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "1f428b62-6131-4b68-a60d-9757e7779269"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "07a60914-99c3-449d-bf5d-1300e632850f"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "fbe5fd44-f412-45e6-a7a4-5ba19d695d15"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "9929a7c6-3920-4efc-ba5c-18f319814ca3"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "8957d012-1795-4c51-9979-619e045617b6"}
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,937 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "b2d6da4c-e8c8-4bc6-96fd-57b28e2966e9"}
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "25c3d677-70c0-4cf8-b9a9-fb4eff3f2eb5"}
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "064f7e66-6b12-4b3e-90fe-a6bfc1a61086"}
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "585a70ab-a7e1-4999-9b98-c486aa3514b6"}
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "946ef4c2-1aea-496a-82f9-03fff97d7dea"}
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "61a1c5c7-6e85-4ba4-ac15-3dc813f81532"}
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,941 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "02456732-2878-4a63-b808-9f802213ea43"}
+2024-03-30 12:06:14,944 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,944 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "2ab9b9af-2605-4456-904c-007f5bb427f0"}
+2024-03-30 12:06:14,944 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,944 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "0679828a-3845-4a03-bea8-90e3172506b2"}
+2024-03-30 12:06:14,946 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "754abe16-3dcf-4de7-97c8-a84cc99a0fec"}
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "915635cd-e7c2-4379-bf2c-e0d508efcfee"}
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "aeb26ee6-3c13-4fd2-b29d-5bb8e577ca04"}
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message: {"type": "health metrics", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "device123", "heartRate": 72, "caloriesBurned": 150}, "trace_id": "d8d7cb16-27b3-4a7d-885c-de87a472c287"}
+2024-03-30 12:06:14,947 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,952 - basicLogger - INFO - Consumed message: {"type": "workout event", "datetime": "2024-03-26T19:47:49", "payload": {"userDeviceId": "19", "exerciseType": "yoga", "duration": 50, "intensity": "low"}, "trace_id": "935576ce-3258-4dfe-bb99-5e4a77fd7b6d"}
+2024-03-30 12:06:14,953 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,953 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-28T22:46:49", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:14,953 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-28T22:46:49', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:14,971 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,971 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T03:45:20", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:14,972 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T03:45:20', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:14,983 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,987 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T04:26:03", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:14,987 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T04:26:03', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:14,997 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:14,997 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T17:43:47", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,002 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T17:43:47', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,012 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,017 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T18:03:25", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,019 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T18:03:25', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,026 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,027 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T18:14:15", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,027 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T18:14:15', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,036 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,038 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T18:42:11", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,038 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T18:42:11', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,043 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,044 - basicLogger - INFO - Consumed message: {"type": "Storage Service Status", "datetime": "2024-03-30T18:42:28", "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.", "code": "0002"}
+2024-03-30 12:06:15,044 - basicLogger - INFO - Consumed readiness message: {'type': 'Storage Service Status', 'datetime': '2024-03-30T18:42:28', 'message': 'Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.', 'code': '0002'}
+2024-03-30 12:06:15,056 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,057 - basicLogger - INFO - Consumed message: {"type": "Storage Service Status", "datetime": "2024-03-30T18:43:17", "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.", "code": "0002"}
+2024-03-30 12:06:15,057 - basicLogger - INFO - Consumed readiness message: {'type': 'Storage Service Status', 'datetime': '2024-03-30T18:43:17', 'message': 'Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.', 'code': '0002'}
+2024-03-30 12:06:15,064 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,064 - basicLogger - INFO - Consumed message: {"type": "Storage Service Status", "datetime": "2024-03-30T18:46:17", "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.", "code": "0002"}
+2024-03-30 12:06:15,069 - basicLogger - INFO - Consumed readiness message: {'type': 'Storage Service Status', 'datetime': '2024-03-30T18:46:17', 'message': 'Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.', 'code': '0002'}
+2024-03-30 12:06:15,074 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,075 - basicLogger - INFO - Consumed message: {"type": "Storage Service Status", "datetime": "2024-03-30T18:48:51", "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.", "code": "0002"}
+2024-03-30 12:06:15,076 - basicLogger - INFO - Consumed readiness message: {'type': 'Storage Service Status', 'datetime': '2024-03-30T18:48:51', 'message': 'Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.', 'code': '0002'}
+2024-03-30 12:06:15,081 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,081 - basicLogger - INFO - Consumed message: {"type": "Storage Service Status", "datetime": "2024-03-30T18:51:42", "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.", "code": "0002"}
+2024-03-30 12:06:15,084 - basicLogger - INFO - Consumed readiness message: {'type': 'Storage Service Status', 'datetime': '2024-03-30T18:51:42', 'message': 'Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.', 'code': '0002'}
+2024-03-30 12:06:15,089 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,089 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T18:52:09", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,092 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T18:52:09', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,097 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,097 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T18:53:03", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,099 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T18:53:03', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,104 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,106 - basicLogger - INFO - Consumed message: {"type": "Storage Service Status", "datetime": "2024-03-30T18:53:10", "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.", "code": "0002"}
+2024-03-30 12:06:15,106 - basicLogger - INFO - Consumed readiness message: {'type': 'Storage Service Status', 'datetime': '2024-03-30T18:53:10', 'message': 'Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.', 'code': '0002'}
+2024-03-30 12:06:15,112 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,112 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T19:01:59", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,115 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T19:01:59', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:06:15,123 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:06:15,123 - basicLogger - INFO - Consumed message: {"type": "service status", "datetime": "2024-03-30T19:04:38", "service": "Receiver", "status": "ready", "code": "0001", "description": "Receiver service has started and is ready to receive messages."}
+2024-03-30 12:06:15,123 - basicLogger - INFO - Consumed readiness message: {'type': 'service status', 'datetime': '2024-03-30T19:04:38', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,464 - basicLogger - INFO - ####Starting to consume events
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,653 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,656 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,656 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,657 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,659 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,668 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,674 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,677 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,677 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,677 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,677 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,678 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,678 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,679 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,679 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,680 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,680 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,681 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,682 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,686 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,693 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,693 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,693 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,695 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,695 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,696 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,701 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,701 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,701 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,701 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,701 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,701 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,703 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,707 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,707 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,707 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,707 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,707 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,707 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,710 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,710 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,710 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,711 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,714 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,714 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,714 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,714 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,714 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,716 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,720 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,720 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,720 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,723 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,723 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,723 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,723 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,723 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,723 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,724 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,724 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,724 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,726 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,726 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,727 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,728 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-28T22:46:49', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,742 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,745 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T03:45:20', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,747 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,752 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T04:26:03', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,763 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,764 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T17:43:47', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,773 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,775 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T18:03:25', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,789 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,793 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T18:14:15', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,801 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,802 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T18:42:11', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,811 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,818 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,818 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,821 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,821 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,821 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,821 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T18:52:09', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,826 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,826 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T18:53:03', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,832 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,832 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,832 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T19:01:59', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}
+2024-03-30 12:09:43,832 - basicLogger - INFO - Consumed message from Kafka
+2024-03-30 12:09:43,832 - basicLogger - INFO - Consumed readiness message for Receiver service: {'type': 'service status', 'datetime': '2024-03-30T19:04:38', 'service': 'Receiver', 'status': 'ready', 'code': '0001', 'description': 'Receiver service has started and is ready to receive messages.'}

@@ -110,12 +110,7 @@ def postHealthMetrics(body):
 
 def process_messages():
     """ Process event messages from Kafka """
-    # hostname = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
-    # client = KafkaClient(hosts=hostname)
-    # topic = client.topics[str.encode(app_config['events']['topic'])]
-    # consumer = topic.get_simple_consumer(consumer_group=b'event_group',
-    #                                      reset_offset_on_start=False,
-    #                                      auto_offset_reset=OffsetType.LATEST)
+    
     max_retries = app_config['kafka']['max_retries']
     retry_wait = app_config['kafka']['retry_wait']  # In seconds
     hostname = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
@@ -130,6 +125,7 @@ def process_messages():
                                                  auto_offset_reset=OffsetType.LATEST)
             
             logger.info("Successfully connected to Kafka")
+            send_storage_ready_message(kafka_client, topic_name)
             break  
 
         except Exception as e:
@@ -226,26 +222,30 @@ def getHealthMetricsByTimeRange(start_timestamp, end_timestamp):
 
     return health_metrics_data, 200
 
-def get_kafka_producer():
-    """Returns a Kafka producer instance for sending messages."""
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config['events']['topic'])] 
-    logger.info("storage - ******Kafka producer connected.")
-    return topic.get_sync_producer()
+# def get_kafka_producer():
+#     """Returns a Kafka producer instance for sending messages."""
+#     client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+#     topic = client.topics[str.encode(app_config['events']['topic'])] 
+#     return topic.get_sync_producer()
 
-
-def send_storage_ready_message():
+def send_storage_ready_message(kafka_client, topic_name):
     """Sends a readiness message to the event_log topic indicating Storage is ready to consume messages."""
-    message = {
-        "type": "Storage Service Status",
-        "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
-        "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.",
-        "code": "0002"
-    }
-    kafka_producer = get_kafka_producer()
-    msg_str = json.dumps(message)
-    kafka_producer.produce(msg_str.encode('utf-8'))
-    logger.info("Storage service readiness message sent to Kafka.")
+    try:
+        # Assuming kafka_client is an instance of KafkaClient already connected to Kafka.
+        topic = kafka_client.topics[str.encode(topic_name)]
+        kafka_producer = topic.get_sync_producer()
+
+        message = {
+            "type": "Storage Service Status",
+            "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.",
+            "code": "0002"
+        }
+        msg_str = json.dumps(message)
+        kafka_producer.produce(msg_str.encode('utf-8'))
+        logger.info("Storage service readiness message sent to Kafka.")
+    except Exception as e:
+        logger.error(f"Failed to send Storage service readiness message to Kafka: {e}")
 
 
 app = connexion.FlaskApp(__name__, specification_dir='')

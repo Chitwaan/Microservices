@@ -38,14 +38,13 @@ def consume_events():
     client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
     topic = client.topics[str.encode(app_config['events']['topic'])]  
     consumer = topic.get_simple_consumer()
-    logger.info("####Starting to consume events")
-    logger.info('consumer:', topic, consumer)
     for message in consumer:
         if message is not None:
             msg_data = json.loads(message.value.decode('utf-8'))
             # Filtering based on 'code' value
-            if msg_data.get('code') in ['0001', '0002']:
-                logger.info(f"Consumed readiness message: {msg_data}")
+            if msg_data.get('type') == "service status" and msg_data.get('code') in ["0001", "0002"]:
+                service = "Receiver" if msg_data.get('code') == "0001" else "Storage"
+                logger.info(f"Consumed readiness message for {service} service: {msg_data}")
 
                 # Process the message as before
                 event_log = EventLog(
