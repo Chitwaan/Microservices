@@ -38,6 +38,8 @@ logger = logging.getLogger('basicLogger')
 with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
 
+logger.info("App Conf File: %s" % app_conf_file)
+logger.info("Log Conf File: %s" % log_conf_file)
 # Initialize the database
 initialize_database(app_config)
 

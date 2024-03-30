@@ -44,6 +44,8 @@ with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f)
 
 logger = logging.getLogger('basicLogger')
+logger.info("App Conf File: %s" % app_conf_file)
+logger.info("Log Conf File: %s" % log_conf_file)
 
 kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
 

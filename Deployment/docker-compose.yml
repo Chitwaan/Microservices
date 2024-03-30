@@ -71,19 +71,20 @@ services:
   #     - db
 
   # processing:
-  #   image: deployment-processing:latest
+  #   image: processing:latest
   #   network_mode: "host"
   #   environment:
   #     - TARGET_ENV=test
   #   volumes:
   #     - /home/chitwan/config/processing:/config
   #     - /home/chitwan/logs:/logs
+  #     - processing-db:/data
   #   depends_on:
   #     - kafka
   #     - storage
 
   # audit_log:
-  #   image: deployment-audit_log:latest
+  #   image: audit_log:latest
   #   ports:
   #     - "8110:8110"
   #   environment:
@@ -104,4 +105,6 @@ services:
 
 volumes:
   my-db:
+    driver: local
+  processing-db:
     driver: local
