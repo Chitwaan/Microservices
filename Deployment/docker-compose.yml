@@ -44,64 +44,64 @@ services:
     volumes:
       - my-db:/var/lib/mysql
 
-  # receiver:
-  #   image: receiver:latest
-  #   ports:
-  #     - "8080:8080"
-  #   environment:
-  #     - TARGET_ENV=test
-  #   volumes:
-  #     - /home/chitwan/config/receiver:/config
-  #     - /home/chitwan/logs:/logs
-  #   depends_on:
-  #     - kafka
-  #     - db
+  receiver:
+    image: receiver:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - TARGET_ENV=test
+    volumes:
+      - /home/chitwan/config/receiver:/config
+      - /home/chitwan/logs:/logs
+    depends_on:
+      - kafka
+      - db
 
-  # storage:
-  #   image: storage:latest
-  #   ports:
-  #     - "8090:8090"
-  #   environment:
-  #     - TARGET_ENV=test
-  #   volumes:
-  #     - /home/chitwan/config/storage:/config
-  #     - /home/chitwan/logs:/logs
-  #   depends_on:
-  #     - kafka
-  #     - db
+  storage:
+    image: storage:latest
+    ports:
+      - "8090:8090"
+    environment:
+      - TARGET_ENV=test
+    volumes:
+      - /home/chitwan/config/storage:/config
+      - /home/chitwan/logs:/logs
+    depends_on:
+      - kafka
+      - db
 
-  # processing:
-  #   image: processing:latest
-  #   network_mode: "host"
-  #   environment:
-  #     - TARGET_ENV=test
-  #   volumes:
-  #     - /home/chitwan/config/processing:/config
-  #     - /home/chitwan/logs:/logs
-  #     - processing-db:/data
-  #   depends_on:
-  #     - kafka
-  #     - storage
+  processing:
+    image: processing:latest
+    network_mode: "host"
+    environment:
+      - TARGET_ENV=test
+    volumes:
+      - /home/chitwan/config/processing:/config
+      - /home/chitwan/logs:/logs
+      - processing-db:/data
+    depends_on:
+      - kafka
+      - storage
 
-  # audit_log:
-  #   image: audit_log:latest
-  #   ports:
-  #     - "8110:8110"
-  #   environment:
-  #     - TARGET_ENV=test
-  #   volumes:
-  #     - /home/chitwan/config/audit_log:/config
-  #     - /home/chitwan/logs:/logs
-  #   depends_on:
-  #     - kafka
+  audit_log:
+    image: audit_log:latest
+    ports:
+      - "8110:8110"
+    environment:
+      - TARGET_ENV=test
+    volumes:
+      - /home/chitwan/config/audit_log:/config
+      - /home/chitwan/logs:/logs
+    depends_on:
+      - kafka
 
-  # dashboard:
-  #   image: dashboard-ui
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - "processing"
-  #     - "audit_log"
+  dashboard:
+    image: dashboard-ui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "processing"
+      - "audit_log"
 
 volumes:
   my-db:
