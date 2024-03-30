@@ -11,13 +11,15 @@ import connexion
 import requests
 from sqlalchemy import desc
 from stats import UnifiedStats
-import uuid
+import uuid, json
 from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 from connexion import FlaskApp
 import os
 import sqlite3
+from pykafka import KafkaClient
 from initialize_db import initialize_database
+
 
 if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
     print("In Test Environment")
@@ -37,6 +39,37 @@ logger = logging.getLogger('basicLogger')
 
 with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
+
+
+def get_kafka_producer():
+    try:
+        client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+        topic = client.topics[str.encode("events")]  
+        return topic.get_sync_producer()
+    except Exception as e:
+        logger.error(f"Error connecting to Kafka: {e}")
+        return None
+
+kafka_producer = get_kafka_producer()
+
+def send_processor_startup_message():
+    if kafka_producer:
+        message = {
+            "type": "service status",
+            "datetime": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "service": "Processor",
+            "status": "ready",
+            "code": "0003",
+            "description": "Processor service has started and is ready."
+        }
+        msg_str = json.dumps(message)
+        kafka_producer.produce(msg_str.encode('utf-8'))
+        logger.info("Processor service startup message sent to Kafka.")
+    else:
+        logger.error("Kafka producer not initialized. Startup message not sent.")
+
+send_processor_startup_message()
+
 
 # logger.info("App Conf File: %s" % app_conf_file)
 # logger.info("Log Conf File: %s" % log_conf_file)
@@ -148,6 +181,8 @@ def init_scheduler():
     sched = BackgroundScheduler(daemon=True)
     sched.add_job(populate_stats, 'interval', seconds=app_config['scheduler']['period_sec'])
     sched.start()
+
+
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_middleware(
