@@ -33,7 +33,8 @@ def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait
             logger.error(f"Failed to connect to Kafka on retry {retry_count}: {e}")
             time.sleep(retry_wait)
             retry_count += 1
-    raise Exception("Failed to initialize Kafka producer after max retries")
+    logger.error("Failed to initialize Kafka producer after max retries")
+    return None
 
 # Load configuration files
 with open(log_conf_file, 'r') as f:
@@ -84,24 +85,29 @@ def postHealthMetrics(body):
     return NoContent, 201
 
 
-def send_startup_message():
-    """Send a message indicating the receiver service is ready."""
-    message = {
-        "type": "service status",
-        "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
-        "service": "Receiver",
-        "status": "ready",
-        "code": "0001",
-        "description": "Receiver service has started and is ready to receive messages."
-    }
-    msg_str = json.dumps(message)
-    kafka_producer.produce(msg_str.encode('utf-8'))
-    logger.info("Sent service ready message to Kafka.")
+def send_startup_message(kafka_producer):
+    """Send a startup message if connected to Kafka."""
+    if kafka_producer is not None:
+        message = {
+            "type": "service status",
+            "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "service": "Receiver",
+            "status": "ready",
+            "code": "0001",
+            "message": "Receiver service has started and is ready to receive messages."
+        }
+        msg_str = json.dumps(message)
+        kafka_producer.produce(msg_str.encode('utf-8'))
+        logger.info("Sent service ready message to Kafka.")
+    else:
+        logger.error("Failed to send startup message: Kafka producer not initialized")
 
+# Initialize Kafka producer with retry logic
+kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
-    send_startup_message() 
+    send_startup_message(kafka_producer)
     app.run(host='0.0.0.0', port=8080)
