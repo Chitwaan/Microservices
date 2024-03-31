@@ -16,7 +16,7 @@ from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 from connexion import FlaskApp
 import os
-import sqlite3
+import sqlite3, time
 from pykafka import KafkaClient
 from initialize_db import initialize_database
 
@@ -41,34 +41,42 @@ with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f.read())
 
 
-def get_kafka_producer():
-    try:
-        client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-        topic = client.topics[str.encode("events")]  
-        return topic.get_sync_producer()
-    except Exception as e:
-        logger.error(f"Error connecting to Kafka: {e}")
-        return None
+def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait=3):
+    """Initialize Kafka producer with retry logic."""
+    retry_count = 0
+    while retry_count < max_retries:
+        try:
+            logger.info('Attempting to connect to Kafka...')
+            kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
+            kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
+            kafka_producer = kafka_topic.get_sync_producer()
+            logger.info('Successfully connected to Kafka')
+            return kafka_producer
+        except Exception as e:
+            logger.error(f"Failed to connect to Kafka on retry {retry_count}: {e}")
+            time.sleep(retry_wait)
+            retry_count += 1
+    logger.error("Failed to initialize Kafka producer after max retries")
+    return None
 
-kafka_producer = get_kafka_producer()
 
-def send_processor_startup_message():
-    if kafka_producer:
+def send_startup_message(kafka_producer):
+    """Send a startup message if connected to Kafka."""
+    if kafka_producer is not None:
         message = {
             "type": "service status",
-            "datetime": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
-            "service": "Processor",
+            "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "service": "Processing",
             "status": "ready",
             "code": "0003",
-            "description": "Processor service has started and is ready."
+            "message": "processing service has started and is ready to receive messages."
         }
         msg_str = json.dumps(message)
         kafka_producer.produce(msg_str.encode('utf-8'))
-        logger.info("Processor service startup message sent to Kafka.")
+        logger.info("Sent service ready message to Kafka.")
     else:
-        logger.error("Kafka producer not initialized. Startup message not sent.")
+        logger.error("Failed to send startup message: Kafka producer not initialized")
 
-send_processor_startup_message()
 
 
 # logger.info("App Conf File: %s" % app_conf_file)
@@ -183,6 +191,7 @@ def init_scheduler():
     sched.start()
 
 
+kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_middleware(
@@ -196,6 +205,8 @@ app.add_middleware(
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
+    send_startup_message(kafka_producer)
+
     init_scheduler()
     app.run(host='0.0.0.0', port=8100)
 

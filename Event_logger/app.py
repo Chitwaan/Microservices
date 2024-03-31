@@ -38,6 +38,7 @@ def consume_events():
     client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
     topic = client.topics[str.encode(app_config['events']['topic'])]  
     consumer = topic.get_simple_consumer()
+    # logger.info('consumer:', topic, consumer)
     for message in consumer:
         if message is not None:
             msg_data = json.loads(message.value.decode('utf-8'))

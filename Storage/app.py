@@ -233,14 +233,16 @@ def send_storage_ready_message(kafka_client, topic_name):
     """Sends a readiness message to the event_log topic indicating Storage is ready to consume messages."""
     try:
         logger.info("****",kafka_client, topic_name)
-        
+
         # Assuming kafka_client is an instance of KafkaClient already connected to Kafka.
         topic = kafka_client.topics[str.encode(topic_name)]
         kafka_producer = topic.get_sync_producer()
 
         message = {
-            "type": "Storage Service Status",
+            "type":"service status",
             "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "service": "Storage",
+            "status": "ready",
             "message": "Storage service has successfully started and connected to Kafka. Ready to consume messages from the events topic.",
             "code": "0002"
         }

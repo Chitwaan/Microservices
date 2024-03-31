@@ -3,3 +3,4 @@ connexion[flask,uvicorn]
 swagger-ui-bundle
 APScheduler
 SQLAlchemy
+pykafka
