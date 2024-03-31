@@ -43,13 +43,13 @@ def consume_events():
         if message is not None:
             msg_data = json.loads(message.value.decode('utf-8'))
             # Filtering based on 'code' value
-            if msg_data.get('type') == "service status" and msg_data.get('code') in ["0001", "0002"]:
+            if msg_data.get('type') == "service status" and msg_data.get('code') in ["0001", "0002", "0003"]:
                 service = "Receiver" if msg_data.get('code') == "0001" else "Storage"
                 logger.info(f"Consumed readiness message for {service} service: {msg_data}")
 
                 # Process the message as before
                 event_log = EventLog(
-                    message=msg_data.get('description', 'No description'), 
+                    message=msg_data.get('message', 'No description'), 
                     code=msg_data.get('code', 'No code')
                 )
                 db_session.add(event_log)

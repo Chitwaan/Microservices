@@ -38,7 +38,13 @@ logging.config.dictConfig(log_config)
 logger = logging.getLogger('basicLogger')
 
 with open(app_conf_file, 'r') as f:
+    
     app_config = yaml.safe_load(f.read())
+
+# Global variable for counting processed messages
+processed_messages_count = 0
+# Load the message threshold from configuration
+message_threshold = app_config['processing']['message_threshold']
 
 
 def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait=3):
@@ -65,7 +71,7 @@ def send_startup_message(kafka_producer):
     if kafka_producer is not None:
         message = {
             "type": "service status",
-            "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "datetime": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
             "service": "Processing",
             "status": "ready",
             "code": "0003",
@@ -78,11 +84,10 @@ def send_startup_message(kafka_producer):
         logger.error("Failed to send startup message: Kafka producer not initialized")
 
 
-
-# logger.info("App Conf File: %s" % app_conf_file)
-# logger.info("Log Conf File: %s" % log_conf_file)
-# # Initialize the database
-# initialize_database(app_config)
+logger.info("App Conf File: %s" % app_conf_file)
+logger.info("Log Conf File: %s" % log_conf_file)
+# Initialize the database
+initialize_database(app_config)
 
 # Create SQLAlchemy engine and session
 engine = create_engine(f"sqlite:///{app_config['datastore']['filename']}")
@@ -90,9 +95,32 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 
 
+def send_processing_exceeded_message():
+    if kafka_producer:
+        message = {
+            "type": "Processing Exceeded",
+            "datetime": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "description": f"Processed more than {message_threshold} messages.",
+            "code": "0004"
+        }
+        msg_str = json.dumps(message)
+        kafka_producer.produce(msg_str.encode('utf-8'))
+        logger.info("Sent processing exceeded message to Kafka.")
+    else:
+        logger.error("Failed to send processing exceeded message: Kafka producer not initialized")
+
+
 def populate_stats():
     logger.info("----------------------------------------------------")
     session = DBSession()
+    global processed_messages_count
+    # Inside your loops for processing events and metrics
+    processed_messages_count += 1
+
+    if processed_messages_count >= message_threshold:
+        send_processing_exceeded_message()
+        processed_messages_count = 0  # Reset count
+
  
     # Get or create the unified stats record
     unified_stats = session.query(UnifiedStats).first()
@@ -128,6 +156,7 @@ def populate_stats():
             workout_events_data = workout_events_response.json()
             if workout_events_data:
                 for event in workout_events_data:
+                        processed_messages_count += 1
                         unified_stats.num_workout_events += 1
                         logger.info('-------workout event trace id: %s', event.get('trace_id', 'N/A'))
                         unified_stats.total_duration += event.get('duration', 0)
@@ -139,6 +168,7 @@ def populate_stats():
             if health_metrics_data:
                 logger.info(f"******health_metrics_response: {health_metrics_response} from {health_metrics_endpoint}")
                 for metric in health_metrics_data:
+                            processed_messages_count += 1
                             unified_stats.num_health_metrics += 1
                             logger.info('----------health metrics trace id: %s', metric.get('trace_id', 'N/A'))
 
