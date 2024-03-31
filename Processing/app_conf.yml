@@ -8,6 +8,10 @@ events:
   port: 9092
   topic: events
 
+processing:
+  message_threshold: 25
+
+
 eventstore1:
   url: http://microservices-3855.eastus.cloudapp.azure.com:8090/workoutEvents
 eventstore2:
