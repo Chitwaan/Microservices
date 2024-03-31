@@ -38,6 +38,7 @@ logging.config.dictConfig(log_config)
 logger = logging.getLogger('basicLogger')
 
 with open(app_conf_file, 'r') as f:
+    logger.info(app_conf_file)
     app_config = yaml.safe_load(f.read())
 
 
@@ -65,7 +66,7 @@ def send_startup_message(kafka_producer):
     if kafka_producer is not None:
         message = {
             "type": "service status",
-            "datetime": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
+            "datetime": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
             "service": "Processing",
             "status": "ready",
             "code": "0003",
