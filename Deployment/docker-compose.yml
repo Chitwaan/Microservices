@@ -103,6 +103,15 @@ services:
       - "processing"
       - "audit_log"
 
+  event_logger:
+    image: event_logger
+    ports:
+      - "8120:8120" 
+    environment:
+      - TARGET_ENV=test 
+    depends_on:
+      - kafka
+
 volumes:
   my-db:
     driver: local

@@ -1,4 +1,6 @@
 Flask
+connexion[flask,uvicorn]
 SQLAlchemy
 kafka-python
+pykafka
 pyyaml
