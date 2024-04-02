@@ -35,25 +35,47 @@ db_session = init_db(f"sqlite:///{app_config['database']['filename']}")
 
 
 def consume_events():
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config['events']['topic'])]  
-    consumer = topic.get_simple_consumer()
-    # logger.info('consumer:', topic, consumer)
+    max_retries = app_config['kafka']['max_retries']
+    retry_wait = app_config['kafka']['retry_wait'] 
+    retry_count = 0
+    while retry_count < max_retries:
+        try:
+            client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+            topic = client.topics[str.encode(app_config['events']['topic'])]
+            consumer = topic.get_simple_consumer()
+            logger.info("Successfully connected to Kafka")
+            break
+        except Exception as e:
+            logger.error(f"Failed to connect to Kafka on retry {retry_count}: {e}")
+            time.sleep(retry_wait)
+            retry_count += 1
+    if retry_count == max_retries:
+        logger.error("Max retries reached. Failed to connect to Kafka.")
+        return  # Exit function if connection fails after retries
     for message in consumer:
         if message is not None:
             msg_data = json.loads(message.value.decode('utf-8'))
-            # Filtering based on 'code' value
-            if msg_data.get('type') == "service status" and msg_data.get('code') in ["0001", "0002", "0003"]:
-                service = "Receiver" if msg_data.get('code') == "0001" else "Storage"
-                logger.info(f"Consumed readiness message for {service} service: {msg_data}")
+            
+            # Enhanced filtering based on 'code' value to include all service types
+            if msg_data.get('type') in ["service status", "Processing Exceeded"] and msg_data.get('code') in ["0001", "0002", "0003", "0004"]:
+                # Map service names to codes for more accurate logging
+                service_map = {
+                    "0001": "Receiver",
+                    "0002": "Storage",
+                    "0003": "Processor",
+                    "0004": "Processing Exceeded Notification"
+                }
+                service = service_map.get(msg_data.get('code'), "Unknown Service")
+                logger.info(f"Consumed message for {service}: {msg_data}")
 
-                # Process the message as before
+                # Process the message
                 event_log = EventLog(
-                    message=msg_data.get('message', 'No description'), 
+                    message=msg_data.get('message', 'No description'),
                     code=msg_data.get('code', 'No code')
                 )
                 db_session.add(event_log)
                 db_session.commit()
+
 
 
 

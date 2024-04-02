@@ -7,5 +7,9 @@ events:
   port: 9092
   topic: events
 
+kafka:
+  max_retries: 5 
+  retry_wait: 3 
+  
 api:
   port: 8120
