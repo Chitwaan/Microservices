@@ -47,7 +47,9 @@ services:
   receiver:
     image: receiver:latest
     ports:
-      - "8080:8080"
+      - "8080"
+    networks:
+      - "api.network"
     environment:
       - TARGET_ENV=test
     volumes:
@@ -60,7 +62,9 @@ services:
   storage:
     image: storage:latest
     ports:
-      - "8090:8090"
+      - "8090"
+    networks:
+      - "api.network"
     environment:
       - TARGET_ENV=test
     volumes:
@@ -72,7 +76,9 @@ services:
 
   processing:
     image: processing:latest
-    network_mode: "host"
+    # network_mode: "host"
+    networks:
+      - "api.network"
     environment:
       - TARGET_ENV=test
     volumes:
@@ -86,7 +92,9 @@ services:
   audit_log:
     image: audit_log:latest
     ports:
-      - "8110:8110"
+      - "8110"
+    networks:
+      - "api.network"
     environment:
       - TARGET_ENV=test
     volumes:
@@ -98,7 +106,9 @@ services:
   dashboard:
     image: dashboard-ui
     ports:
-      - "3000:3000"
+      - "3000"
+    networks:
+      - "api.network"
     depends_on:
       - "processing"
       - "audit_log"
@@ -111,6 +121,25 @@ services:
       - TARGET_ENV=test 
     depends_on:
       - kafka
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - /home/chitwan/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - "receiver"
+      - "storage"
+      - "processing"
+      - "audit_log"
+      - "dashboard-ui"
+    ports:
+      - "80:80"
+    networks:
+      - "api.network"
+
+networks:
+  api.network:
+    driver: bridge
 
 volumes:
   my-db:

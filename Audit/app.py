@@ -87,6 +87,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.add_api('openapi.yml',  strict_validation=True, validate_responses=True)
+# app.add_api("openapi.yml", base_path="/audit_log", strict_validation=True, validate_responses=True)
 
 if __name__ == '__main__':
     port = 8110

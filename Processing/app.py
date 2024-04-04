@@ -17,6 +17,7 @@ from starlette.middleware.cors import CORSMiddleware
 from connexion import FlaskApp
 import os
 import sqlite3, time
+from flask_cors import CORS
 from pykafka import KafkaClient
 from initialize_db import initialize_database
 
@@ -233,6 +234,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
+# app.add_api("openapi.yml", base_path="/processing", strict_validation=True, validate_responses=True)
+
+
+if "TARGET_ENV" not in os.environ or os.environ["TARGET_ENV"] != "test":
+    CORS(app.app)
+    app.app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 if __name__ == "__main__":
     send_startup_message(kafka_producer)
