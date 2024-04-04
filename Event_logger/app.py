@@ -10,7 +10,8 @@ from datetime import datetime
 from sqlalchemy import func
 import yaml
 from flask import request
-
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
 import logging
 import logging.config
 from sqlalchemy import and_
@@ -85,6 +86,15 @@ def get_event_stats():
 
 
 app = connexion.FlaskApp(__name__, specification_dir='')
+
+app.add_middleware(
+    CORSMiddleware,
+    position=MiddlewarePosition.BEFORE_EXCEPTION,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
 
 
