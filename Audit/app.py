@@ -8,6 +8,7 @@ from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 from connexion import FlaskApp
 import os
+from flask_cors import CORS
 
 
 if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
@@ -78,16 +79,21 @@ def get_health_metrics_by_index(index):
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"], 
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-app.add_api('openapi.yml',  strict_validation=True, validate_responses=True)
-# app.add_api("openapi.yml", base_path="/audit_log", strict_validation=True, validate_responses=True)
+# app.add_middleware(
+#     CORSMiddleware,
+#     position=MiddlewarePosition.BEFORE_EXCEPTION,
+#     allow_origins=["*"], 
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+# app.add_api('openapi.yml',  strict_validation=True, validate_responses=True)
+app.add_api("openapi.yml", base_path="/audit_log", strict_validation=True, validate_responses=True)
+
+if "TARGET_ENV" not in os.environ or os.environ["TARGET_ENV"] != "test":
+    CORS(app.app)
+    app.app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 if __name__ == '__main__':
     port = 8110
