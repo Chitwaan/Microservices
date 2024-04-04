@@ -124,7 +124,7 @@ def process_messages():
                                                  reset_offset_on_start=False,
                                                  auto_offset_reset=OffsetType.LATEST)
             
-            logger.info("Successfully connected to Kafka. Storage connected to kafka")
+            logger.info("Successfully connected to Kafka.")
             logger.info(topic, client)
             send_storage_ready_message(client, app_config['events']['topic'])            
             break  
