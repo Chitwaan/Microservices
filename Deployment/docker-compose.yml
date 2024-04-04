@@ -131,7 +131,7 @@ services:
       - "storage"
       - "processing"
       - "audit_log"
-      - "dashboard-ui"
+      - "dashboard"
     ports:
       - "80:80"
     networks:

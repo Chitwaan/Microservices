@@ -225,16 +225,16 @@ def init_scheduler():
 kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
 
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"], 
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
-# app.add_api("openapi.yml", base_path="/processing", strict_validation=True, validate_responses=True)
+# app.add_middleware(
+#     CORSMiddleware,
+#     position=MiddlewarePosition.BEFORE_EXCEPTION,
+#     allow_origins=["*"], 
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+# app.add_api("openapi.yml", strict_validation=True, validate_responses=True)
+app.add_api("openapi.yml", base_path="/processing", strict_validation=True, validate_responses=True)
 
 
 if "TARGET_ENV" not in os.environ or os.environ["TARGET_ENV"] != "test":
