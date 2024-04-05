@@ -9,7 +9,7 @@ export default function AppStats() {
 
     const getStats = () => {
         Promise.all([
-            fetch(`http://microservices-3855.eastus.cloudapp.azure.com:8100/stats`).then(res => res.json()),
+            fetch(`http://microservices-3855.eastus.cloudapp.azure.com/processing/stats`).then(res => res.json()),
             fetch(`http://microservices-3855.eastus.cloudapp.azure.com:8120/events_stats`).then(res => res.json())
         ])
         .then(([statsResult, eventLogResult]) => {
