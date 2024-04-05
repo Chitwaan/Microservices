@@ -10,7 +10,7 @@ export default function EndpointAudit(props) {
 
     const getAudit = useCallback(() => {
         const rand_val = Math.floor(Math.random() * 100); // Get a random event index
-        fetch(`http://microservices-3855.eastus.cloudapp.azure.com:audit_log/${props.endpoint}?index=${rand_val}`)
+        fetch(`http://microservices-3855.eastus.cloudapp.azure.com/audit_log/${props.endpoint}?index=${rand_val}`)
             .then(res => res.json())
             .then((result) => {
                 console.log("Received Audit Results for " + props.endpoint);
