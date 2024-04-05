@@ -144,10 +144,12 @@ def populate_stats():
 
         
         # Update your endpoints to use the correct start and end timestamps
-        health_metrics_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/healthMetrics?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
-        workout_events_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/workoutEvents?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
+        # health_metrics_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/healthMetrics?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
+        # workout_events_endpoint = f"http://microservices-3855.eastus.cloudapp.azure.com:8090/workoutEvents?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
 
-   
+        health_metrics_endpoint = f"http://{app_config['eventstore1']['url']}?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
+        workout_events_endpoint = f"http://{app_config['eventstore2']['url']}?start_timestamp={last_updated_str}&end_timestamp={current_datetime_str}"
+
 
         # Fetch new workout events
         workout_events_response = requests.get(workout_events_endpoint, params={'start_timestamp': last_updated_str})
