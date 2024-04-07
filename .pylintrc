@@ -1,0 +1,13 @@
+[MASTER]
+ignore=venv
+
+[TYPECHECK]
+ignored-modules=connexion,yaml,pykafka
+[BASIC]
+
+good-names=i,j,k,e,ex,Run,_
+[DESIGN]
+broad-except=Yes
+
+[LOGGER]
+logging-format-interpolation=Yes
