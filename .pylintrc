@@ -13,6 +13,7 @@ good-names=i,j,k,e,ex,Run,_
 broad-except=Yes
 
 [LOGGER]
+
 logging-format-interpolation=Yes
 
 [FORMAT]

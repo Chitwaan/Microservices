@@ -22,6 +22,9 @@ from pykafka.common import OffsetType
 import time
 import os
 
+"""
+This module provides REST API to handle workout data and health metrics.
+"""
 if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
     print("In Test Environment")
     app_conf_file = "/config/app_conf.yml"
@@ -73,7 +76,7 @@ def postWorkoutData(body):
 
     except Exception as e:
         session.rollback()
-        logger.error(f"Error processing workout event with trace id {trace_id}: {str(e)}")
+        logger.error(f"Error processing workout event with trace id:: {trace_id}: {str(e)}")
 
         raise e
     finally:
