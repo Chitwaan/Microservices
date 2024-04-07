@@ -43,7 +43,10 @@ def consume_events():
         try:
             client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
             topic = client.topics[str.encode(app_config['events']['topic'])]
-            consumer = topic.get_simple_consumer()
+            consumer = topic.get_simple_consumer(consumer_group=b'event_group',
+                                                 reset_offset_on_start=False,
+                                                 auto_offset_reset=OffsetType.LATEST)
+            
             logger.info("Successfully connected to Kafka")
             break
         except Exception as e:
@@ -58,7 +61,7 @@ def consume_events():
             msg_data = json.loads(message.value.decode('utf-8'))
             
             # Enhanced filtering based on 'code' value to include all service types
-            if msg_data.get('type') in ["service status", "Processing Exceeded"] and msg_data.get('code') in ["0001", "0002", "0003", "0004"]:
+            if msg_data.get('type') in ["service status", "Processing Exceeded"] and msg_data.get('code') in ["0001", "0002", "0003", "0004"] and 'message' in msg_data and msg_data['message'].strip():
                 # Map service names to codes for more accurate logging
                 service_map = {
                     "0001": "Receiver",
@@ -71,13 +74,13 @@ def consume_events():
 
                 # Process the message
                 event_log = EventLog(
-                    message=msg_data.get('message', 'No description'),
-                    code=msg_data.get('code', 'No code')
+                    message=msg_data['message'],
+                    code=msg_data['code']
                 )
                 db_session.add(event_log)
                 db_session.commit()
 
-
+        consumer.commit_offsets()
 
 
 def get_event_stats():

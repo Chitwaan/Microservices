@@ -1,13 +1,16 @@
-import connexion
+import connexion # pylint: disable=import-error
 from connexion import NoContent
-import yaml
+import yaml # pylint: disable=import-error
 import logging.config
 import uuid
-from pykafka import KafkaClient
+from pykafka import KafkaClient # pylint: disable=import-error
 import json
 from datetime import datetime
 import time
 import os
+"""
+This module provides REST API to handle workout data and health metrics.
+"""
 
 if "TARGET_ENV" in os.environ and os.environ["TARGET_ENV"] == "test":
     print("In Test Environment")
