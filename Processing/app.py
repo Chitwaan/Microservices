@@ -101,7 +101,7 @@ def send_processing_exceeded_message():
         message = {
             "type": "Processing Exceeded",
             "datetime": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
-            "description": f"Processed more than {message_threshold} messages.",
+            "message": f"Processed more than {message_threshold} messages.",
             "code": "0004"
         }
         msg_str = json.dumps(message)
