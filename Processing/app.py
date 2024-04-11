@@ -63,7 +63,7 @@ def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait
             logger.error(f"Failed to connect to Kafka on retry {retry_count}: {e}")
             time.sleep(retry_wait)
             retry_count += 1
-    logger.error("Failed to initialize Kafka producer after max retries")
+    logger.error("Failed to initialize Kafka producer after max retries...")
     return None
 
 
@@ -112,6 +112,7 @@ def send_processing_exceeded_message():
 
 
 def populate_stats():
+    logger.info("ASSIGNMENT 3")
     logger.info("------------------------*---*----*---------------------")
     session = DBSession()
     global processed_messages_count
