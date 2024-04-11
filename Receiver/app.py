@@ -98,7 +98,7 @@ def send_startup_message(kafka_producer):
             "service": "Receiver",
             "status": "ready",
             "code": "0001",
-            "message": "Receiver service has started and is ready to receive messages."
+            "message": "Receiver service has started and is ready to receive messages...."
         }
         msg_str = json.dumps(message)
         kafka_producer.produce(msg_str.encode('utf-8'))
