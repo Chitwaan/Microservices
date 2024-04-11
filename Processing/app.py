@@ -53,7 +53,7 @@ def initialize_kafka_producer_with_retry(kafka_config, max_retries=5, retry_wait
     retry_count = 0
     while retry_count < max_retries:
         try:
-            logger.info('Attempting to connect to Kafka...')
+            logger.info('Attempting to connect to Kafka.....')
             kafka_client = KafkaClient(hosts=f"{kafka_config['hostname']}:{kafka_config['port']}")
             kafka_topic = kafka_client.topics[str.encode(kafka_config['topic'])]
             kafka_producer = kafka_topic.get_sync_producer()
@@ -112,7 +112,7 @@ def send_processing_exceeded_message():
 
 
 def populate_stats():
-    logger.info("----------------------------------------------------")
+    logger.info("------------------------*---*----*---------------------")
     session = DBSession()
     global processed_messages_count
     # Inside your loops for processing events and metrics
