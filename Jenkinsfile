@@ -1,3 +1,3 @@
-@Library('mySharedLib') _
+// @Library('mySharedLib') _
 
-dockerPipeline('mydockerrepo')
+// dockerPipeline('mydockerrepo')
