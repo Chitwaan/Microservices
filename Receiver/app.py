@@ -104,7 +104,7 @@ def send_startup_message(kafka_producer):
         kafka_producer.produce(msg_str.encode('utf-8'))
         logger.info("Sent service ready message to Kafka.")
     else:
-        logger.error("Failed to send startup message: Kafka producer not initialized")
+        logger.error("Failed to send startup message: Kafka producer not initialized. try again")
 
 # Initialize Kafka producer with retry logic
 kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
