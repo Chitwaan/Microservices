@@ -71,7 +71,7 @@ def postWorkoutData(body):
     }
     msg_str = json.dumps(msg)
     kafka_producer.produce(msg_str.encode('utf-8'))
-    logger.info(f"Produced workout event message with trace id: {trace_id}")
+    logger.info(f"Produced workout event message with trace id::: {trace_id}")
     return NoContent, 201
 
 def postHealthMetrics(body):
@@ -86,6 +86,7 @@ def postHealthMetrics(body):
     kafka_producer.produce(msg_str.encode('utf-8'))
     logger.info(f"Produced health metrics message with trace id: {trace_id}")
     return NoContent, 201
+
 
 
 def send_startup_message(kafka_producer):
