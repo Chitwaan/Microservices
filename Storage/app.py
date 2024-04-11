@@ -190,7 +190,7 @@ def getWorkoutEventsByTimeRange(start_timestamp, end_timestamp):
         logger.info(f"Found {len(workout_events_data)} workout events")
         return workout_events_data, 200
     except Exception as e:
-        logger.error(f"Error retrieving workout events: {str(e)}")
+        logger.error(f"Error retrieving workout events:::: {str(e)}")
         return {"message": "Error retrieving workout events"}, 500
     finally:
         session.close()
