@@ -1,3 +1,4 @@
 @Library('mySharedLib') _
 
-dockerPipeline('chitwankaur/microservices', 'receiver')
+// Start the pipeline defined in the shared library
+dockerPipeline('chitwankaur/receiver', 'latest')

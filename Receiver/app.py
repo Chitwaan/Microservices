@@ -47,7 +47,7 @@ logging.config.dictConfig(log_config)
 with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f)
 
-logger = logging.getLogger('basicLogger')
+logger = logging.getLogger('basicLogger---------')
 logger.info("App Conf File: %s" % app_conf_file)
 logger.info("Log Conf File: %s" % log_conf_file)
 
@@ -100,6 +100,7 @@ def send_startup_message(kafka_producer):
             "code": "0001",
             "message": "Receiver service has started and is ready to receive messages...."
         }
+        #sending msg to kafka
         msg_str = json.dumps(message)
         kafka_producer.produce(msg_str.encode('utf-8'))
         logger.info("Sent service ready message to Kafka.")
