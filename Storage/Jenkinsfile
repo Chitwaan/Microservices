@@ -1,0 +1,3 @@
+@Library('mySharedLib') _
+
+dockerPipeline('chitwankaur/microservices', 'storage')

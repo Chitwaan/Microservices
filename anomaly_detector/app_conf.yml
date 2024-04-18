@@ -1,0 +1,32 @@
+version: 1
+database:
+  filepath: anomaly_detector.db
+  # host: microservices-3855.eastus.cloudapp.azure.com
+  # port: 3306
+  # user: user
+  # password: Password
+  # dbname: events
+
+events:
+  hostname: microservices-3855.eastus.cloudapp.azure.com
+  port: 9092
+  topic: events 
+
+logging:
+  level: INFO
+  file: audit_service.log
+
+thresholds:
+
+  heartRate:
+    min: 60  # Minimum heart rate in BPM considered normal
+    max: 180 # Maximum heart rate in BPM considered safe
+  caloriesBurned:
+    min: 100 # Minimum calories expected to be burned for it to be logged as a valid workout
+    max: 1000
+
+
+eventstore1:
+  url: http://microservices-3855.eastus.cloudapp.azure.com:8090/workoutEvents
+eventstore2:
+  url: http://microservices-3855.eastus.cloudapp.azure.com:8090/healthMetrics

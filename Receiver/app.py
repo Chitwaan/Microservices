@@ -47,7 +47,7 @@ logging.config.dictConfig(log_config)
 with open(app_conf_file, 'r') as f:
     app_config = yaml.safe_load(f)
 
-logger = logging.getLogger('basicLogger')
+logger = logging.getLogger('basicLogger---------')
 logger.info("App Conf File: %s" % app_conf_file)
 logger.info("Log Conf File: %s" % log_conf_file)
 
@@ -71,7 +71,7 @@ def postWorkoutData(body):
     }
     msg_str = json.dumps(msg)
     kafka_producer.produce(msg_str.encode('utf-8'))
-    logger.info(f"Produced workout event message with trace id: {trace_id}")
+    logger.info(f"Produced workout event message with trace id::: {trace_id}")
     return NoContent, 201
 
 def postHealthMetrics(body):
@@ -88,6 +88,7 @@ def postHealthMetrics(body):
     return NoContent, 201
 
 
+
 def send_startup_message(kafka_producer):
     """Send a startup message if connected to Kafka."""
     if kafka_producer is not None:
@@ -97,13 +98,14 @@ def send_startup_message(kafka_producer):
             "service": "Receiver",
             "status": "ready",
             "code": "0001",
-            "message": "Receiver service has started and is ready to receive messages."
+            "message": "Receiver service has started and is ready to receive messages...."
         }
+        #sending msg to kafka
         msg_str = json.dumps(message)
         kafka_producer.produce(msg_str.encode('utf-8'))
         logger.info("Sent service ready message to Kafka.")
     else:
-        logger.error("Failed to send startup message: Kafka producer not initialized")
+        logger.error("Failed to send startup message: Kafka producer not initialized. ..try again")
 
 # Initialize Kafka producer with retry logic
 kafka_producer = initialize_kafka_producer_with_retry(app_config['events'])
