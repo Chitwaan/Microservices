@@ -1,4 +1,0 @@
-@Library('mySharedLib') _
-
-// Start the pipeline defined in the shared library
-dockerPipeline('chitwankaur/receiver', 'latest1')

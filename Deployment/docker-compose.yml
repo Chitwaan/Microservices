@@ -122,6 +122,13 @@ services:
     depends_on:
       - kafka
 
+  anomaly_detector:
+    image: anomaly_detector
+    ports: 
+      - 5000:5000
+    depends_on:
+      - kafka
+      
   nginx:
     image: nginx:latest
     volumes:
