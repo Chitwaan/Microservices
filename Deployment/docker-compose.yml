@@ -16,7 +16,7 @@ services:
       - "9092:9092"
     hostname: kafka
     environment:
-      KAFKA_CREATE_TOPICS: "events:1:1"
+      KAFKA_CREATE_TOPICS: "events:1:1,event_log:1:1"
       KAFKA_ADVERTISED_HOST_NAME: microservices-3855.eastus.cloudapp.azure.com
       KAFKA_LISTENERS: INSIDE://:29092,OUTSIDE://:9092
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
@@ -120,6 +120,8 @@ services:
       - TARGET_ENV=test 
     depends_on:
       - kafka
+    volumes:
+      - event-logger-db:/app/db
 
   nginx:
     image: nginx:latest
@@ -144,4 +146,6 @@ volumes:
   my-db:
     driver: local
   processing-db:
+    driver: local
+  event-logger-db: 
     driver: local
